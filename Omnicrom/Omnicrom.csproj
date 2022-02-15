@@ -105,9 +105,15 @@
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
+	  <Private>True</Private>
+	</Reference>
+	<Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
+	  <Private>True</Private>
+	</Reference>
+	<Reference Include="Telerik.WinControls.Themes.Office2019, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.Office2019.dll</HintPath>
       <Private>True</Private>
     </Reference>
