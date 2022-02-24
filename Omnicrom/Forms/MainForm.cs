@@ -85,6 +85,8 @@ namespace Omnicrom
         {
             UpdateSplashScreenText("Loading form components");
 
+            this.Size = new System.Drawing.Size(1000, 495); // 1000, 495
+
             PageView_Logs.SelectedPage.Name = "ViewPage_Logs_Omnicrom";
             CurrentLogBox = LogBox_Omnicrom;
             CurrentLogBox.Name = "Omnicrom_Log";
@@ -92,6 +94,7 @@ namespace Omnicrom
 
             OmnicromRunTime = new Stopwatch();
             IdleTimer = new Stopwatch();
+            RunningProcessIDs = new List<int>();
             //statustimer = new Timer();
         }
 
@@ -130,8 +133,8 @@ namespace Omnicrom
 
         private void ShowRemovableDriveGroupBox()
         {
-            if ((RemovableDriveFound == true && Label_Drives_RemovableName.Text == Removable.Name) || (RemovableDriveFound == false && GroupBox_Drives_Removable.Visible == false))
-                return;
+            //if ((RemovableDriveFound == true && Label_Drives_RemovableName.Text == Removable.Name) || (RemovableDriveFound == false && GroupBox_Drives_Removable.Visible == false))
+            //    return;
 
             if (!RemovableDriveFound)
             {   
@@ -166,9 +169,13 @@ namespace Omnicrom
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            if (mainform.Width != 1000)
+                mainform.Size = new System.Drawing.Size(1000, 495);
+
             UpdateSplashScreenText("Finishing up");
             CheckViewSelection("ViewPage_Logs_Omnicrom");
- 
+            LoadStartApplications();
+
             OmnicromRunTime.Start();
             statustimer.Start();
             IdleTimer.Start();
@@ -179,6 +186,11 @@ namespace Omnicrom
 
             UpdateSplashScreenText("Finished loading sequence. Starting ...");
             Log("Omnicrom started successfully.");
+        }
+
+        private async void LoadStartApplications()
+        {
+            await Task.Run(() => { StartCaffeineApp(); });
         }
 
         #endregion Load Objects
@@ -691,9 +703,12 @@ namespace Omnicrom
 
 
         // Settings toggle switch events
-        private void ToggleSwitch_Settings_StopLock_ValueChanged(object sender, EventArgs e)
+        private async void ToggleSwitch_Settings_StopLock_ValueChangedAsync(object sender, EventArgs e)
         {
-            //ActivateStopLock();
+            if (StopLockID != 0)
+                await Task.Run(() => { StopCaffeineAppAsync(); }); 
+            else
+                await Task.Run(() => { StartCaffeineApp(); } );
         }
 
         private void ToggleSwitch_Settings_ToolTips_ValueChanged(object sender, EventArgs e)
@@ -736,7 +751,7 @@ namespace Omnicrom
             if (mainform.Width != 1000)
                 mainform.Size = new System.Drawing.Size(1000, 495);            
             else
-                mainform.Size = new System.Drawing.Size(752, 495); // 1000, 495         
+                mainform.Size = new System.Drawing.Size(755, 495); // 1000, 495         
 
             UpdateForm(this);
         }
@@ -745,10 +760,9 @@ namespace Omnicrom
         #endregion Settings toggle switch events
 
 
-
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DisposePerformanceCounters();
+
         }
 
 
@@ -789,6 +803,12 @@ namespace Omnicrom
         private void GroupBox_Drives_Removable_VisibleChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private async void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DisposePerformanceCounters();
+            await StopProcessAtCloseAsync();
         }
     }
 }

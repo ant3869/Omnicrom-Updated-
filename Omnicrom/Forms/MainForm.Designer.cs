@@ -40,13 +40,33 @@ namespace Omnicrom
             this.office2019DarkTheme1 = new Telerik.WinControls.Themes.Office2019DarkTheme();
             this.office2019LightTheme1 = new Telerik.WinControls.Themes.Office2019LightTheme();
             this.PageView_Main = new Telerik.WinControls.UI.RadPageView();
+            this.ViewPage_Main_USMT = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radButton3 = new Telerik.WinControls.UI.RadButton();
+            this.ViewPage_Main_AppInstaller = new Telerik.WinControls.UI.RadPageViewPage();
+            this.ViewPage_Main_Tools = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radButton6 = new Telerik.WinControls.UI.RadButton();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
+            this.dotsLineWaitingBarIndicatorElement1 = new Telerik.WinControls.UI.DotsLineWaitingBarIndicatorElement();
+            this.radButton5 = new Telerik.WinControls.UI.RadButton();
+            this.radButton7 = new Telerik.WinControls.UI.RadButton();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.PageView_Tools = new Telerik.WinControls.UI.RadPageView();
+            this.ViewPage_Tools_Fixes = new Telerik.WinControls.UI.RadPageViewPage();
+            this.ViewPage_Tools_Tools = new Telerik.WinControls.UI.RadPageViewPage();
+            this.ViewPage_Tools_Installers = new Telerik.WinControls.UI.RadPageViewPage();
+            this.ViewPage_Main_Links = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.radPictureBox4 = new Telerik.WinControls.UI.RadPictureBox();
             this.radLabel20 = new Telerik.WinControls.UI.RadLabel();
+            this.radPictureBox1 = new Telerik.WinControls.UI.RadPictureBox();
             this.radLabel15 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel13 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel17 = new Telerik.WinControls.UI.RadLabel();
             this.GroupBox_Status = new Telerik.WinControls.UI.RadGroupBox();
             this.Label_Status_Indicator = new Telerik.WinControls.UI.RadLabel();
+            this.PictureBox_Status_Ok = new Telerik.WinControls.UI.RadPictureBox();
             this.Label_Status_Description = new Telerik.WinControls.UI.RadLabel();
             this.GroupBox_Settings = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel14 = new Telerik.WinControls.UI.RadLabel();
@@ -57,7 +77,12 @@ namespace Omnicrom
             this.ToggleSwitch_Settings_Sound = new Telerik.WinControls.UI.RadToggleSwitch();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
             this.Label_Machine_Model = new Telerik.WinControls.UI.RadLabel();
+            this.Button_Machine_TaskManager = new Telerik.WinControls.UI.RadButton();
+            this.Button_Machine_Restart = new Telerik.WinControls.UI.RadButton();
+            this.radButton15 = new Telerik.WinControls.UI.RadButton();
             this.ProgressBar_Machine_RAM = new Telerik.WinControls.UI.RadProgressBar();
+            this.Button_Machine_Shutdown = new Telerik.WinControls.UI.RadButton();
+            this.radButton13 = new Telerik.WinControls.UI.RadButton();
             this.Label_Machine_UpTime = new Telerik.WinControls.UI.RadLabel();
             this.radLabel31 = new Telerik.WinControls.UI.RadLabel();
             this.Label_Machine_Tag = new Telerik.WinControls.UI.RadLabel();
@@ -65,6 +90,8 @@ namespace Omnicrom
             this.Label_Machine_Name = new Telerik.WinControls.UI.RadLabel();
             this.radLabel30 = new Telerik.WinControls.UI.RadLabel();
             this.ProgressBar_Machine_CPU = new Telerik.WinControls.UI.RadProgressBar();
+            this.Button_Machine_LogOut = new Telerik.WinControls.UI.RadButton();
+            this.radButton4 = new Telerik.WinControls.UI.RadButton();
             this.ProgressBar_Machine_PGE = new Telerik.WinControls.UI.RadProgressBar();
             this.ProgressBar_Machine_DSK = new Telerik.WinControls.UI.RadProgressBar();
             this.radLabel29 = new Telerik.WinControls.UI.RadLabel();
@@ -106,28 +133,9 @@ namespace Omnicrom
             this.Label_Drives_LocalName = new Telerik.WinControls.UI.RadLabel();
             this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
+            this.PictureBox_Status_Warn = new Telerik.WinControls.UI.RadPictureBox();
+            this.PictureBox_Status_Error = new Telerik.WinControls.UI.RadPictureBox();
             this.PageView_Logs = new Telerik.WinControls.UI.RadPageView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Label_ToolTip_DisplayText = new Telerik.WinControls.UI.RadLabel();
-            this.TextBox_Logs_FindBoxInput = new Telerik.WinControls.UI.RadTextBox();
-            this.Label_Logs_Header = new Telerik.WinControls.UI.RadLabel();
-            this.TextBox_PageView_DriveMachineInput = new Telerik.WinControls.UI.RadTextBox();
-            this.Label_PageView_Header = new Telerik.WinControls.UI.RadLabel();
-            this.StatusStrip_Main = new Telerik.WinControls.UI.RadStatusStrip();
-            this.radWaitingBarElement1 = new Telerik.WinControls.UI.RadWaitingBarElement();
-            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
-            this.Label_StatusStrip_Version = new Telerik.WinControls.UI.RadLabelElement();
-            this.statustimer = new System.Windows.Forms.Timer(this.components);
-            this.waitingBarIndicatorElement1 = new Telerik.WinControls.UI.WaitingBarIndicatorElement();
-            this.waitingBarIndicatorElement2 = new Telerik.WinControls.UI.WaitingBarIndicatorElement();
-            this.Label_Logs_OmnicromRunTime = new Telerik.WinControls.UI.RadLabel();
-            this.Button_Logs_ScrollToTop = new Telerik.WinControls.UI.RadButton();
-            this.Button_Logs_Clear = new Telerik.WinControls.UI.RadButton();
-            this.Button_Logs_ExternalOpen = new Telerik.WinControls.UI.RadButton();
-            this.radPictureBox3 = new Telerik.WinControls.UI.RadPictureBox();
-            this.PictureBox_Drives_RemovableImage = new Telerik.WinControls.UI.RadPictureBox();
-            this.Button_PageView_DriveMachineInput = new Telerik.WinControls.UI.RadButton();
-            this.Button_Logs_Find = new Telerik.WinControls.UI.RadButton();
             this.ViewPage_Logs_QuickTools = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
             this.radPictureBox2 = new Telerik.WinControls.UI.RadPictureBox();
@@ -147,35 +155,7 @@ namespace Omnicrom
             this.ViewPage_Logs_Omnicrom = new Telerik.WinControls.UI.RadPageViewPage();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
             this.LogBox_Omnicrom = new System.Windows.Forms.RichTextBox();
-            this.radPictureBox4 = new Telerik.WinControls.UI.RadPictureBox();
-            this.radPictureBox1 = new Telerik.WinControls.UI.RadPictureBox();
-            this.PictureBox_Status_Ok = new Telerik.WinControls.UI.RadPictureBox();
-            this.Button_Machine_TaskManager = new Telerik.WinControls.UI.RadButton();
-            this.Button_Machine_Restart = new Telerik.WinControls.UI.RadButton();
-            this.radButton15 = new Telerik.WinControls.UI.RadButton();
-            this.Button_Machine_Shutdown = new Telerik.WinControls.UI.RadButton();
-            this.radButton13 = new Telerik.WinControls.UI.RadButton();
-            this.Button_Machine_LogOut = new Telerik.WinControls.UI.RadButton();
-            this.radButton4 = new Telerik.WinControls.UI.RadButton();
-            this.PictureBox_Status_Warn = new Telerik.WinControls.UI.RadPictureBox();
-            this.PictureBox_Status_Error = new Telerik.WinControls.UI.RadPictureBox();
-            this.ViewPage_Main_USMT = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radButton3 = new Telerik.WinControls.UI.RadButton();
-            this.ViewPage_Main_AppInstaller = new Telerik.WinControls.UI.RadPageViewPage();
-            this.ViewPage_Main_Tools = new Telerik.WinControls.UI.RadPageViewPage();
-            this.radButton6 = new Telerik.WinControls.UI.RadButton();
-            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
-            this.radWaitingBar1 = new Telerik.WinControls.UI.RadWaitingBar();
-            this.dotsLineWaitingBarIndicatorElement1 = new Telerik.WinControls.UI.DotsLineWaitingBarIndicatorElement();
-            this.radButton5 = new Telerik.WinControls.UI.RadButton();
-            this.radButton7 = new Telerik.WinControls.UI.RadButton();
-            this.radButton1 = new Telerik.WinControls.UI.RadButton();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.PageView_Tools = new Telerik.WinControls.UI.RadPageView();
-            this.ViewPage_Tools_Fixes = new Telerik.WinControls.UI.RadPageViewPage();
-            this.ViewPage_Tools_Tools = new Telerik.WinControls.UI.RadPageViewPage();
-            this.ViewPage_Tools_Installers = new Telerik.WinControls.UI.RadPageViewPage();
-            this.ViewPage_Main_Links = new Telerik.WinControls.UI.RadPageViewPage();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restartOmnicromStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -202,17 +182,52 @@ namespace Omnicrom
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Label_ToolTip_DisplayText = new Telerik.WinControls.UI.RadLabel();
+            this.TextBox_Logs_FindBoxInput = new Telerik.WinControls.UI.RadTextBox();
+            this.Label_Logs_Header = new Telerik.WinControls.UI.RadLabel();
+            this.TextBox_PageView_DriveMachineInput = new Telerik.WinControls.UI.RadTextBox();
+            this.Label_PageView_Header = new Telerik.WinControls.UI.RadLabel();
+            this.StatusStrip_Main = new Telerik.WinControls.UI.RadStatusStrip();
+            this.radWaitingBarElement1 = new Telerik.WinControls.UI.RadWaitingBarElement();
+            this.commandBarSeparator1 = new Telerik.WinControls.UI.CommandBarSeparator();
+            this.Label_StatusStrip_Version = new Telerik.WinControls.UI.RadLabelElement();
+            this.statustimer = new System.Windows.Forms.Timer(this.components);
+            this.waitingBarIndicatorElement1 = new Telerik.WinControls.UI.WaitingBarIndicatorElement();
+            this.waitingBarIndicatorElement2 = new Telerik.WinControls.UI.WaitingBarIndicatorElement();
+            this.Label_Logs_OmnicromRunTime = new Telerik.WinControls.UI.RadLabel();
+            this.Button_Logs_ScrollToTop = new Telerik.WinControls.UI.RadButton();
+            this.Button_Logs_Clear = new Telerik.WinControls.UI.RadButton();
+            this.Button_Logs_ExternalOpen = new Telerik.WinControls.UI.RadButton();
+            this.radPictureBox3 = new Telerik.WinControls.UI.RadPictureBox();
+            this.PictureBox_Drives_RemovableImage = new Telerik.WinControls.UI.RadPictureBox();
+            this.Button_PageView_DriveMachineInput = new Telerik.WinControls.UI.RadButton();
+            this.Button_Logs_Find = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.PageView_Main)).BeginInit();
             this.PageView_Main.SuspendLayout();
+            this.ViewPage_Main_USMT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).BeginInit();
+            this.ViewPage_Main_Tools.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PageView_Tools)).BeginInit();
+            this.PageView_Tools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Status)).BeginInit();
             this.GroupBox_Status.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Status_Indicator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Ok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Status_Description)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Settings)).BeginInit();
             this.GroupBox_Settings.SuspendLayout();
@@ -225,7 +240,14 @@ namespace Omnicrom
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
             this.radGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_Model)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_TaskManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Restart)).BeginInit();
+            this.Button_Machine_Restart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_RAM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Shutdown)).BeginInit();
+            this.Button_Machine_Shutdown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_UpTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_Tag)).BeginInit();
@@ -233,6 +255,9 @@ namespace Omnicrom
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_Name)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_CPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_LogOut)).BeginInit();
+            this.Button_Machine_LogOut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_PGE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_DSK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel29)).BeginInit();
@@ -276,23 +301,10 @@ namespace Omnicrom
             ((System.ComponentModel.ISupportInitialize)(this.Label_Drives_LocalName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Warn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PageView_Logs)).BeginInit();
             this.PageView_Logs.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_ToolTip_DisplayText)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBox_Logs_FindBoxInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_Header)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBox_PageView_DriveMachineInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_PageView_Header)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StatusStrip_Main)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_OmnicromRunTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ScrollToTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Clear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ExternalOpen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Drives_RemovableImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_PageView_DriveMachineInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Find)).BeginInit();
             this.ViewPage_Logs_QuickTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
             this.radPanel3.SuspendLayout();
@@ -314,33 +326,21 @@ namespace Omnicrom
             this.ViewPage_Logs_Omnicrom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).BeginInit();
             this.radPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Ok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_TaskManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Restart)).BeginInit();
-            this.Button_Machine_Restart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Shutdown)).BeginInit();
-            this.Button_Machine_Shutdown.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_LogOut)).BeginInit();
-            this.Button_Machine_LogOut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Warn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Error)).BeginInit();
-            this.ViewPage_Main_USMT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).BeginInit();
-            this.ViewPage_Main_Tools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PageView_Tools)).BeginInit();
-            this.PageView_Tools.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_ToolTip_DisplayText)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBox_Logs_FindBoxInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_Header)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBox_PageView_DriveMachineInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_PageView_Header)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StatusStrip_Main)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_OmnicromRunTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ScrollToTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Clear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ExternalOpen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Drives_RemovableImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_PageView_DriveMachineInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Find)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,6 +363,203 @@ namespace Omnicrom
             ((Telerik.WinControls.UI.StripViewItemLayout)(this.PageView_Main.GetChildAt(0).GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.Color.Transparent;
             ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.PageView_Main.GetChildAt(0).GetChildAt(1))).ShouldPaint = false;
             // 
+            // ViewPage_Main_USMT
+            // 
+            this.ViewPage_Main_USMT.Controls.Add(this.radButton3);
+            this.ViewPage_Main_USMT.Image = global::Omnicrom.Properties.Resources.Mig_normal_small__2_;
+            this.ViewPage_Main_USMT.ItemSize = new System.Drawing.SizeF(55F, 44F);
+            this.ViewPage_Main_USMT.Location = new System.Drawing.Point(60, 4);
+            this.ViewPage_Main_USMT.Name = "ViewPage_Main_USMT";
+            this.ViewPage_Main_USMT.Size = new System.Drawing.Size(411, 364);
+            // 
+            // radButton3
+            // 
+            this.radButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton3.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton3.Image = global::Omnicrom.Properties.Resources.clipboard_icon_icon;
+            this.radButton3.Location = new System.Drawing.Point(182, 155);
+            this.radButton3.Name = "radButton3";
+            this.radButton3.Size = new System.Drawing.Size(19, 20);
+            this.radButton3.TabIndex = 1;
+            this.radButton3.ThemeName = "CrystalDark";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton3.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.clipboard_icon_icon;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton3.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton3.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton3.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton3.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton3.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            // 
+            // ViewPage_Main_AppInstaller
+            // 
+            this.ViewPage_Main_AppInstaller.Image = global::Omnicrom.Properties.Resources.Applications_small_normal__2_;
+            this.ViewPage_Main_AppInstaller.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ViewPage_Main_AppInstaller.ItemSize = new System.Drawing.SizeF(55F, 51F);
+            this.ViewPage_Main_AppInstaller.Location = new System.Drawing.Point(60, 4);
+            this.ViewPage_Main_AppInstaller.Name = "ViewPage_Main_AppInstaller";
+            this.ViewPage_Main_AppInstaller.Size = new System.Drawing.Size(411, 364);
+            // 
+            // ViewPage_Main_Tools
+            // 
+            this.ViewPage_Main_Tools.Controls.Add(this.radButton6);
+            this.ViewPage_Main_Tools.Controls.Add(this.radLabel2);
+            this.ViewPage_Main_Tools.Controls.Add(this.radWaitingBar1);
+            this.ViewPage_Main_Tools.Controls.Add(this.radButton5);
+            this.ViewPage_Main_Tools.Controls.Add(this.radButton7);
+            this.ViewPage_Main_Tools.Controls.Add(this.radButton1);
+            this.ViewPage_Main_Tools.Controls.Add(this.radLabel1);
+            this.ViewPage_Main_Tools.Controls.Add(this.PageView_Tools);
+            this.ViewPage_Main_Tools.Image = global::Omnicrom.Properties.Resources.ToolBox_normal_smll__2_;
+            this.ViewPage_Main_Tools.ItemSize = new System.Drawing.SizeF(55F, 41F);
+            this.ViewPage_Main_Tools.Location = new System.Drawing.Point(58, 4);
+            this.ViewPage_Main_Tools.Name = "ViewPage_Main_Tools";
+            this.ViewPage_Main_Tools.Size = new System.Drawing.Size(413, 364);
+            // 
+            // radButton6
+            // 
+            this.radButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.radButton6.Location = new System.Drawing.Point(342, 189);
+            this.radButton6.Name = "radButton6";
+            this.radButton6.Size = new System.Drawing.Size(68, 39);
+            this.radButton6.TabIndex = 12;
+            this.radButton6.Text = "Prog";
+            this.radButton6.ThemeName = "CrystalDark";
+            this.radButton6.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.radLabel2.Location = new System.Drawing.Point(334, 326);
+            this.radLabel2.Margin = new System.Windows.Forms.Padding(0);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(85, 15);
+            this.radLabel2.TabIndex = 5;
+            this.radLabel2.Text = "Running Command";
+            this.radLabel2.ThemeName = "VisualStudio2012Dark";
+            this.radLabel2.Visible = false;
+            this.radLabel2.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // radWaitingBar1
+            // 
+            this.radWaitingBar1.BackColor = System.Drawing.Color.Transparent;
+            this.radWaitingBar1.Location = new System.Drawing.Point(335, 339);
+            this.radWaitingBar1.Name = "radWaitingBar1";
+            this.radWaitingBar1.Size = new System.Drawing.Size(83, 10);
+            this.radWaitingBar1.TabIndex = 0;
+            this.radWaitingBar1.Text = "radWaitingBar1";
+            this.radWaitingBar1.Visible = false;
+            this.radWaitingBar1.WaitingIndicators.Add(this.dotsLineWaitingBarIndicatorElement1);
+            this.radWaitingBar1.WaitingIndicatorSize = new System.Drawing.Size(100, 14);
+            this.radWaitingBar1.WaitingSpeed = 80;
+            this.radWaitingBar1.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.DotsLine;
+            this.radWaitingBar1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar1.GetChildAt(0))).WaitingIndicatorSize = new System.Drawing.Size(100, 14);
+            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar1.GetChildAt(0))).WaitingSpeed = 80;
+            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.DotsLine;
+            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
+            // 
+            // dotsLineWaitingBarIndicatorElement1
+            // 
+            this.dotsLineWaitingBarIndicatorElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.dotsLineWaitingBarIndicatorElement1.Name = "dotsLineWaitingBarIndicatorElement1";
+            this.dotsLineWaitingBarIndicatorElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.dotsLineWaitingBarIndicatorElement1.UseCompatibleTextRendering = false;
+            // 
+            // radButton5
+            // 
+            this.radButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.radButton5.Location = new System.Drawing.Point(342, 105);
+            this.radButton5.Name = "radButton5";
+            this.radButton5.Size = new System.Drawing.Size(68, 39);
+            this.radButton5.TabIndex = 10;
+            this.radButton5.Text = "Store";
+            this.radButton5.ThemeName = "CrystalDark";
+            this.radButton5.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // radButton7
+            // 
+            this.radButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.radButton7.Location = new System.Drawing.Point(342, 147);
+            this.radButton7.Name = "radButton7";
+            this.radButton7.Size = new System.Drawing.Size(68, 39);
+            this.radButton7.TabIndex = 11;
+            this.radButton7.Text = "Apps";
+            this.radButton7.ThemeName = "CrystalDark";
+            this.radButton7.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // radButton1
+            // 
+            this.radButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.radButton1.Location = new System.Drawing.Point(342, 63);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(68, 39);
+            this.radButton1.TabIndex = 9;
+            this.radButton1.Text = "USMT";
+            this.radButton1.ThemeName = "CrystalDark";
+            this.radButton1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.ForeColor = System.Drawing.Color.DimGray;
+            this.radLabel1.Image = global::Omnicrom.Properties.Resources.network_folder;
+            this.radLabel1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radLabel1.Location = new System.Drawing.Point(338, 4);
+            this.radLabel1.Margin = new System.Windows.Forms.Padding(0);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(81, 56);
+            this.radLabel1.TabIndex = 8;
+            this.radLabel1.Text = "Directories";
+            this.radLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radLabel1.ThemeName = "VisualStudio2012Dark";
+            this.radLabel1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // PageView_Tools
+            // 
+            this.PageView_Tools.Controls.Add(this.ViewPage_Tools_Fixes);
+            this.PageView_Tools.Controls.Add(this.ViewPage_Tools_Tools);
+            this.PageView_Tools.Controls.Add(this.ViewPage_Tools_Installers);
+            this.PageView_Tools.DefaultPage = this.ViewPage_Tools_Fixes;
+            this.PageView_Tools.Location = new System.Drawing.Point(0, 0);
+            this.PageView_Tools.Name = "PageView_Tools";
+            this.PageView_Tools.SelectedPage = this.ViewPage_Tools_Fixes;
+            this.PageView_Tools.Size = new System.Drawing.Size(332, 363);
+            this.PageView_Tools.TabIndex = 0;
+            this.PageView_Tools.ThemeName = "CrystalDark";
+            // 
+            // ViewPage_Tools_Fixes
+            // 
+            this.ViewPage_Tools_Fixes.Location = new System.Drawing.Point(6, 33);
+            this.ViewPage_Tools_Fixes.Name = "ViewPage_Tools_Fixes";
+            this.ViewPage_Tools_Fixes.Size = new System.Drawing.Size(320, 323);
+            this.ViewPage_Tools_Fixes.Text = "Fixes";
+            // 
+            // ViewPage_Tools_Tools
+            // 
+            this.ViewPage_Tools_Tools.Location = new System.Drawing.Point(6, 33);
+            this.ViewPage_Tools_Tools.Name = "ViewPage_Tools_Tools";
+            this.ViewPage_Tools_Tools.Size = new System.Drawing.Size(320, 323);
+            this.ViewPage_Tools_Tools.Text = "Tools";
+            // 
+            // ViewPage_Tools_Installers
+            // 
+            this.ViewPage_Tools_Installers.Location = new System.Drawing.Point(6, 33);
+            this.ViewPage_Tools_Installers.Name = "ViewPage_Tools_Installers";
+            this.ViewPage_Tools_Installers.Size = new System.Drawing.Size(320, 323);
+            this.ViewPage_Tools_Installers.Text = "Installers";
+            // 
+            // ViewPage_Main_Links
+            // 
+            this.ViewPage_Main_Links.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ViewPage_Main_Links.Image = global::Omnicrom.Properties.Resources.Links_tiny_normal__2_1;
+            this.ViewPage_Main_Links.ItemSize = new System.Drawing.SizeF(55F, 49F);
+            this.ViewPage_Main_Links.Location = new System.Drawing.Point(58, 4);
+            this.ViewPage_Main_Links.Name = "ViewPage_Main_Links";
+            this.ViewPage_Main_Links.Size = new System.Drawing.Size(413, 364);
+            this.ViewPage_Main_Links.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
             // radPanel1
             // 
             this.radPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -384,6 +581,16 @@ namespace Omnicrom
             this.radPanel1.Size = new System.Drawing.Size(268, 387);
             this.radPanel1.TabIndex = 3;
             // 
+            // radPictureBox4
+            // 
+            this.radPictureBox4.Image = global::Omnicrom.Properties.Resources.laptop;
+            this.radPictureBox4.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
+            this.radPictureBox4.Location = new System.Drawing.Point(5, 161);
+            this.radPictureBox4.Name = "radPictureBox4";
+            this.radPictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.radPictureBox4.TabIndex = 3;
+            this.radPictureBox4.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
             // radLabel20
             // 
             this.radLabel20.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -395,6 +602,16 @@ namespace Omnicrom
             this.radLabel20.Text = "Show Logs";
             this.radLabel20.ThemeName = "VisualStudio2012Dark";
             this.radLabel20.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // radPictureBox1
+            // 
+            this.radPictureBox1.Image = global::Omnicrom.Properties.Resources.Exe__Execute__Gears__Package__Settings__System__Utilities__Wheels_icon_icon__1_;
+            this.radPictureBox1.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
+            this.radPictureBox1.Location = new System.Drawing.Point(166, 158);
+            this.radPictureBox1.Name = "radPictureBox1";
+            this.radPictureBox1.Size = new System.Drawing.Size(22, 22);
+            this.radPictureBox1.TabIndex = 2;
+            this.radPictureBox1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
             // 
             // radLabel15
             // 
@@ -466,6 +683,16 @@ namespace Omnicrom
             this.Label_Status_Indicator.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
             this.Label_Status_Indicator.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_Status_Indicator_MouseMove);
             // 
+            // PictureBox_Status_Ok
+            // 
+            this.PictureBox_Status_Ok.Image = global::Omnicrom.Properties.Resources.CheckMark_small_50;
+            this.PictureBox_Status_Ok.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
+            this.PictureBox_Status_Ok.Location = new System.Drawing.Point(0, -1);
+            this.PictureBox_Status_Ok.Name = "PictureBox_Status_Ok";
+            this.PictureBox_Status_Ok.Size = new System.Drawing.Size(20, 20);
+            this.PictureBox_Status_Ok.TabIndex = 4;
+            this.PictureBox_Status_Ok.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
             // Label_Status_Description
             // 
             this.Label_Status_Description.AutoSize = false;
@@ -526,7 +753,7 @@ namespace Omnicrom
             this.ToggleSwitch_Settings_StopLock.ThemeName = "ControlDefault";
             this.ToggleSwitch_Settings_StopLock.ThumbTickness = 15;
             this.ToggleSwitch_Settings_StopLock.ToggleStateMode = Telerik.WinControls.UI.ToggleStateMode.Click;
-            this.ToggleSwitch_Settings_StopLock.ValueChanged += new System.EventHandler(this.ToggleSwitch_Settings_StopLock_ValueChanged);
+            this.ToggleSwitch_Settings_StopLock.ValueChanged += new System.EventHandler(this.ToggleSwitch_Settings_StopLock_ValueChangedAsync);
             this.ToggleSwitch_Settings_StopLock.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
             ((Telerik.WinControls.UI.RadToggleSwitchElement)(this.ToggleSwitch_Settings_StopLock.GetChildAt(0))).ThumbTickness = 15;
             ((Telerik.WinControls.UI.RadToggleSwitchElement)(this.ToggleSwitch_Settings_StopLock.GetChildAt(0))).ThumbOffset = 25;
@@ -699,6 +926,67 @@ namespace Omnicrom
             this.Label_Machine_Model.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
             this.Label_Machine_Model.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label_Machine_Model_MouseMove);
             // 
+            // Button_Machine_TaskManager
+            // 
+            this.Button_Machine_TaskManager.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Machine_TaskManager.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.Button_Machine_TaskManager.Image = global::Omnicrom.Properties.Resources.system_monitor;
+            this.Button_Machine_TaskManager.Location = new System.Drawing.Point(113, 106);
+            this.Button_Machine_TaskManager.Name = "Button_Machine_TaskManager";
+            this.Button_Machine_TaskManager.Size = new System.Drawing.Size(25, 25);
+            this.Button_Machine_TaskManager.TabIndex = 5;
+            this.Button_Machine_TaskManager.ThemeName = "CrystalDark";
+            this.Button_Machine_TaskManager.Click += new System.EventHandler(this.Button_Machine_TaskManager_Click);
+            this.Button_Machine_TaskManager.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            this.Button_Machine_TaskManager.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_TaskManager_MouseMove);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_TaskManager.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.system_monitor;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_TaskManager.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // Button_Machine_Restart
+            // 
+            this.Button_Machine_Restart.Controls.Add(this.radButton15);
+            this.Button_Machine_Restart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Machine_Restart.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.Button_Machine_Restart.Image = global::Omnicrom.Properties.Resources.restart_icon_icon;
+            this.Button_Machine_Restart.Location = new System.Drawing.Point(113, 50);
+            this.Button_Machine_Restart.Name = "Button_Machine_Restart";
+            this.Button_Machine_Restart.Size = new System.Drawing.Size(25, 25);
+            this.Button_Machine_Restart.TabIndex = 8;
+            this.Button_Machine_Restart.ThemeName = "CrystalDark";
+            this.Button_Machine_Restart.Click += new System.EventHandler(this.Button_Machine_Restart_Click);
+            this.Button_Machine_Restart.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            this.Button_Machine_Restart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_Restart_MouseMove);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Restart.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.restart_icon_icon;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Restart.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton15
+            // 
+            this.radButton15.Image = global::Omnicrom.Properties.Resources.Exit_31x31;
+            this.radButton15.Location = new System.Drawing.Point(0, 30);
+            this.radButton15.Name = "radButton15";
+            this.radButton15.Size = new System.Drawing.Size(25, 25);
+            this.radButton15.TabIndex = 1;
+            this.radButton15.ThemeName = "CrystalDark";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton15.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Exit_31x31;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton15.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton15.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
             // ProgressBar_Machine_RAM
             // 
             this.ProgressBar_Machine_RAM.Location = new System.Drawing.Point(24, 103);
@@ -714,6 +1002,45 @@ namespace Omnicrom
             this.ProgressBar_Machine_RAM.ThemeName = "CrystalDark";
             this.ProgressBar_Machine_RAM.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
             this.ProgressBar_Machine_RAM.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProgressBar_Machine_RAM_MouseMove);
+            // 
+            // Button_Machine_Shutdown
+            // 
+            this.Button_Machine_Shutdown.Controls.Add(this.radButton13);
+            this.Button_Machine_Shutdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Machine_Shutdown.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.Button_Machine_Shutdown.Image = global::Omnicrom.Properties.Resources.poweroff_icon_icon;
+            this.Button_Machine_Shutdown.Location = new System.Drawing.Point(113, 78);
+            this.Button_Machine_Shutdown.Name = "Button_Machine_Shutdown";
+            this.Button_Machine_Shutdown.Size = new System.Drawing.Size(25, 25);
+            this.Button_Machine_Shutdown.TabIndex = 7;
+            this.Button_Machine_Shutdown.ThemeName = "CrystalDark";
+            this.Button_Machine_Shutdown.Click += new System.EventHandler(this.Button_Machine_Shutdown_Click);
+            this.Button_Machine_Shutdown.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            this.Button_Machine_Shutdown.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_Shutdown_MouseMove);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Shutdown.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.poweroff_icon_icon;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Shutdown.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton13
+            // 
+            this.radButton13.Image = global::Omnicrom.Properties.Resources.Exit_31x31;
+            this.radButton13.Location = new System.Drawing.Point(0, 30);
+            this.radButton13.Name = "radButton13";
+            this.radButton13.Size = new System.Drawing.Size(25, 25);
+            this.radButton13.TabIndex = 1;
+            this.radButton13.ThemeName = "CrystalDark";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton13.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Exit_31x31;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton13.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton13.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
             // 
             // Label_Machine_UpTime
             // 
@@ -807,6 +1134,45 @@ namespace Omnicrom
             this.ProgressBar_Machine_CPU.ThemeName = "CrystalDark";
             this.ProgressBar_Machine_CPU.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
             this.ProgressBar_Machine_CPU.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ProgressBar_Machine_CPU_MouseMove);
+            // 
+            // Button_Machine_LogOut
+            // 
+            this.Button_Machine_LogOut.Controls.Add(this.radButton4);
+            this.Button_Machine_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Machine_LogOut.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.Button_Machine_LogOut.Image = global::Omnicrom.Properties.Resources.hibernate_icon_icon;
+            this.Button_Machine_LogOut.Location = new System.Drawing.Point(113, 22);
+            this.Button_Machine_LogOut.Name = "Button_Machine_LogOut";
+            this.Button_Machine_LogOut.Size = new System.Drawing.Size(25, 25);
+            this.Button_Machine_LogOut.TabIndex = 2;
+            this.Button_Machine_LogOut.ThemeName = "CrystalDark";
+            this.Button_Machine_LogOut.Click += new System.EventHandler(this.Button_Machine_LogOut_Click);
+            this.Button_Machine_LogOut.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            this.Button_Machine_LogOut.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_LogOut_MouseMove);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_LogOut.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.hibernate_icon_icon;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_LogOut.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton4
+            // 
+            this.radButton4.Image = global::Omnicrom.Properties.Resources.Exit_31x31;
+            this.radButton4.Location = new System.Drawing.Point(0, 30);
+            this.radButton4.Name = "radButton4";
+            this.radButton4.Size = new System.Drawing.Size(25, 25);
+            this.radButton4.TabIndex = 1;
+            this.radButton4.ThemeName = "CrystalDark";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton4.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Exit_31x31;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton4.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton4.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
             // 
             // ProgressBar_Machine_PGE
             // 
@@ -1368,6 +1734,24 @@ namespace Omnicrom
             this.radLabel5.ThemeName = "VisualStudio2012Dark";
             this.radLabel5.Visible = false;
             // 
+            // PictureBox_Status_Warn
+            // 
+            this.PictureBox_Status_Warn.Image = global::Omnicrom.Properties.Resources.warn_32;
+            this.PictureBox_Status_Warn.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
+            this.PictureBox_Status_Warn.Location = new System.Drawing.Point(4, 310);
+            this.PictureBox_Status_Warn.Name = "PictureBox_Status_Warn";
+            this.PictureBox_Status_Warn.Size = new System.Drawing.Size(20, 20);
+            this.PictureBox_Status_Warn.TabIndex = 8;
+            // 
+            // PictureBox_Status_Error
+            // 
+            this.PictureBox_Status_Error.Image = global::Omnicrom.Properties.Resources.Quit_icon_icon__1_;
+            this.PictureBox_Status_Error.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
+            this.PictureBox_Status_Error.Location = new System.Drawing.Point(4, 310);
+            this.PictureBox_Status_Error.Name = "PictureBox_Status_Error";
+            this.PictureBox_Status_Error.Size = new System.Drawing.Size(20, 20);
+            this.PictureBox_Status_Error.TabIndex = 7;
+            // 
             // PageView_Logs
             // 
             this.PageView_Logs.BackColor = System.Drawing.Color.Transparent;
@@ -1389,6 +1773,291 @@ namespace Omnicrom
             ((Telerik.WinControls.UI.StripViewButtonsPanel)(this.PageView_Logs.GetChildAt(0).GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             ((Telerik.WinControls.UI.RadPageViewContentAreaElement)(this.PageView_Logs.GetChildAt(0).GetChildAt(1))).BackColor = System.Drawing.Color.Transparent;
             // 
+            // ViewPage_Logs_QuickTools
+            // 
+            this.ViewPage_Logs_QuickTools.BackColor = System.Drawing.Color.Transparent;
+            this.ViewPage_Logs_QuickTools.Controls.Add(this.radPanel3);
+            this.ViewPage_Logs_QuickTools.Image = global::Omnicrom.Properties.Resources.terminal_32;
+            this.ViewPage_Logs_QuickTools.ItemSize = new System.Drawing.SizeF(40F, 40F);
+            this.ViewPage_Logs_QuickTools.Location = new System.Drawing.Point(5, 46);
+            this.ViewPage_Logs_QuickTools.Name = "ViewPage_Logs_QuickTools";
+            this.ViewPage_Logs_QuickTools.Size = new System.Drawing.Size(229, 321);
+            // 
+            // radPanel3
+            // 
+            this.radPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.radPanel3.Controls.Add(this.radPictureBox2);
+            this.radPanel3.Controls.Add(this.radGroupBox6);
+            this.radPanel3.Location = new System.Drawing.Point(0, 2);
+            this.radPanel3.Name = "radPanel3";
+            this.radPanel3.Size = new System.Drawing.Size(229, 319);
+            this.radPanel3.TabIndex = 3;
+            this.radPanel3.ThemeName = "VisualStudio2022Light";
+            // 
+            // radPictureBox2
+            // 
+            this.radPictureBox2.Image = global::Omnicrom.Properties.Resources.toolbox;
+            this.radPictureBox2.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
+            this.radPictureBox2.Location = new System.Drawing.Point(12, 8);
+            this.radPictureBox2.Name = "radPictureBox2";
+            this.radPictureBox2.Size = new System.Drawing.Size(22, 22);
+            this.radPictureBox2.TabIndex = 8;
+            // 
+            // radGroupBox6
+            // 
+            this.radGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
+            this.radGroupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.radGroupBox6.Controls.Add(this.radButton12);
+            this.radGroupBox6.Controls.Add(this.radButton9);
+            this.radGroupBox6.Controls.Add(this.radButton14);
+            this.radGroupBox6.Controls.Add(this.Button_Logs_PowerShell);
+            this.radGroupBox6.Controls.Add(this.radButton10);
+            this.radGroupBox6.Controls.Add(this.radButton18);
+            this.radGroupBox6.Controls.Add(this.Button_Logs_CMD);
+            this.radGroupBox6.Controls.Add(this.radButton11);
+            this.radGroupBox6.ForeColor = System.Drawing.Color.DimGray;
+            this.radGroupBox6.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            this.radGroupBox6.HeaderText = "Quick Tools";
+            this.radGroupBox6.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomRight;
+            this.radGroupBox6.Location = new System.Drawing.Point(9, 11);
+            this.radGroupBox6.Name = "radGroupBox6";
+            this.radGroupBox6.Size = new System.Drawing.Size(124, 109);
+            this.radGroupBox6.TabIndex = 7;
+            this.radGroupBox6.Text = "Quick Tools";
+            this.radGroupBox6.ThemeName = "VisualStudio2012Dark";
+            this.radGroupBox6.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.GroupBoxHeader)(this.radGroupBox6.GetChildAt(0).GetChildAt(1))).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radGroupBox6.GetChildAt(0).GetChildAt(1).GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            // 
+            // radButton12
+            // 
+            this.radButton12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton12.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton12.Image = global::Omnicrom.Properties.Resources.Actions_document_decrypt_icon_icon;
+            this.radButton12.Location = new System.Drawing.Point(98, 61);
+            this.radButton12.Name = "radButton12";
+            this.radButton12.Size = new System.Drawing.Size(25, 25);
+            this.radButton12.TabIndex = 10;
+            this.radButton12.ThemeName = "CrystalDark";
+            this.radButton12.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton12.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Actions_document_decrypt_icon_icon;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton12.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton12.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton12.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton9
+            // 
+            this.radButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton9.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton9.Image = global::Omnicrom.Properties.Resources.health;
+            this.radButton9.Location = new System.Drawing.Point(36, 29);
+            this.radButton9.Name = "radButton9";
+            this.radButton9.Size = new System.Drawing.Size(25, 25);
+            this.radButton9.TabIndex = 5;
+            this.radButton9.ThemeName = "CrystalDark";
+            this.radButton9.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton9.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.health;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton9.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton9.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton9.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton14
+            // 
+            this.radButton14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton14.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton14.Image = global::Omnicrom.Properties.Resources.information;
+            this.radButton14.Location = new System.Drawing.Point(67, 61);
+            this.radButton14.Name = "radButton14";
+            this.radButton14.Size = new System.Drawing.Size(25, 25);
+            this.radButton14.TabIndex = 9;
+            this.radButton14.ThemeName = "CrystalDark";
+            this.radButton14.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton14.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.information;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton14.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton14.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton14.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // Button_Logs_PowerShell
+            // 
+            this.Button_Logs_PowerShell.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Logs_PowerShell.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.Button_Logs_PowerShell.Image = global::Omnicrom.Properties.Resources.application_xp_terminal;
+            this.Button_Logs_PowerShell.Location = new System.Drawing.Point(5, 61);
+            this.Button_Logs_PowerShell.Name = "Button_Logs_PowerShell";
+            this.Button_Logs_PowerShell.Size = new System.Drawing.Size(25, 25);
+            this.Button_Logs_PowerShell.TabIndex = 3;
+            this.Button_Logs_PowerShell.ThemeName = "CrystalDark";
+            this.Button_Logs_PowerShell.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_PowerShell.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.application_xp_terminal;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_PowerShell.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton10
+            // 
+            this.radButton10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton10.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton10.Image = global::Omnicrom.Properties.Resources.broom;
+            this.radButton10.Location = new System.Drawing.Point(67, 29);
+            this.radButton10.Name = "radButton10";
+            this.radButton10.Size = new System.Drawing.Size(25, 25);
+            this.radButton10.TabIndex = 6;
+            this.radButton10.ThemeName = "CrystalDark";
+            this.radButton10.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton10.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.broom;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton10.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton10.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton10.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton18
+            // 
+            this.radButton18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton18.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton18.Image = global::Omnicrom.Properties.Resources.books_stack;
+            this.radButton18.Location = new System.Drawing.Point(36, 61);
+            this.radButton18.Name = "radButton18";
+            this.radButton18.Size = new System.Drawing.Size(25, 25);
+            this.radButton18.TabIndex = 8;
+            this.radButton18.ThemeName = "CrystalDark";
+            this.radButton18.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton18.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.books_stack;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton18.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton18.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton18.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // Button_Logs_CMD
+            // 
+            this.Button_Logs_CMD.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_Logs_CMD.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.Button_Logs_CMD.Image = global::Omnicrom.Properties.Resources.application_osx_terminal;
+            this.Button_Logs_CMD.Location = new System.Drawing.Point(5, 29);
+            this.Button_Logs_CMD.Name = "Button_Logs_CMD";
+            this.Button_Logs_CMD.Size = new System.Drawing.Size(25, 25);
+            this.Button_Logs_CMD.TabIndex = 4;
+            this.Button_Logs_CMD.ThemeName = "CrystalDark";
+            this.Button_Logs_CMD.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_CMD.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.application_osx_terminal;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_CMD.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // radButton11
+            // 
+            this.radButton11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radButton11.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            this.radButton11.Image = global::Omnicrom.Properties.Resources.folder_user;
+            this.radButton11.Location = new System.Drawing.Point(98, 29);
+            this.radButton11.Name = "radButton11";
+            this.radButton11.Size = new System.Drawing.Size(25, 25);
+            this.radButton11.TabIndex = 7;
+            this.radButton11.ThemeName = "CrystalDark";
+            this.radButton11.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton11.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.folder_user;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton11.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton11.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
+            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton11.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
+            // 
+            // ViewPage_Logs_USMT
+            // 
+            this.ViewPage_Logs_USMT.Controls.Add(this.radPanel2);
+            this.ViewPage_Logs_USMT.Image = global::Omnicrom.Properties.Resources.miglog2_32;
+            this.ViewPage_Logs_USMT.ItemSize = new System.Drawing.SizeF(40F, 40F);
+            this.ViewPage_Logs_USMT.Location = new System.Drawing.Point(5, 46);
+            this.ViewPage_Logs_USMT.Name = "ViewPage_Logs_USMT";
+            this.ViewPage_Logs_USMT.Size = new System.Drawing.Size(229, 321);
+            // 
+            // radPanel2
+            // 
+            this.radPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.radPanel2.Location = new System.Drawing.Point(0, 2);
+            this.radPanel2.Name = "radPanel2";
+            this.radPanel2.Size = new System.Drawing.Size(229, 319);
+            this.radPanel2.TabIndex = 2;
+            this.radPanel2.ThemeName = "VisualStudio2022Light";
+            // 
+            // ViewPage_Logs_AppInstaller
+            // 
+            this.ViewPage_Logs_AppInstaller.Controls.Add(this.radPanel4);
+            this.ViewPage_Logs_AppInstaller.Image = global::Omnicrom.Properties.Resources.AppLog_32;
+            this.ViewPage_Logs_AppInstaller.ItemSize = new System.Drawing.SizeF(40F, 40F);
+            this.ViewPage_Logs_AppInstaller.Location = new System.Drawing.Point(5, 46);
+            this.ViewPage_Logs_AppInstaller.Name = "ViewPage_Logs_AppInstaller";
+            this.ViewPage_Logs_AppInstaller.Size = new System.Drawing.Size(229, 321);
+            // 
+            // radPanel4
+            // 
+            this.radPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.radPanel4.Location = new System.Drawing.Point(0, 2);
+            this.radPanel4.Name = "radPanel4";
+            this.radPanel4.Size = new System.Drawing.Size(229, 319);
+            this.radPanel4.TabIndex = 3;
+            this.radPanel4.ThemeName = "VisualStudio2022Light";
+            // 
+            // ViewPage_Logs_Omnicrom
+            // 
+            this.ViewPage_Logs_Omnicrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ViewPage_Logs_Omnicrom.Controls.Add(this.radPanel5);
+            this.ViewPage_Logs_Omnicrom.Image = global::Omnicrom.Properties.Resources.globaltechlog_32;
+            this.ViewPage_Logs_Omnicrom.ItemSize = new System.Drawing.SizeF(40F, 40F);
+            this.ViewPage_Logs_Omnicrom.Location = new System.Drawing.Point(5, 46);
+            this.ViewPage_Logs_Omnicrom.Name = "ViewPage_Logs_Omnicrom";
+            this.ViewPage_Logs_Omnicrom.Size = new System.Drawing.Size(229, 321);
+            // 
+            // radPanel5
+            // 
+            this.radPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.radPanel5.Controls.Add(this.LogBox_Omnicrom);
+            this.radPanel5.Location = new System.Drawing.Point(0, 2);
+            this.radPanel5.Name = "radPanel5";
+            this.radPanel5.Size = new System.Drawing.Size(229, 319);
+            this.radPanel5.TabIndex = 3;
+            this.radPanel5.ThemeName = "VisualStudio2022Light";
+            // 
+            // LogBox_Omnicrom
+            // 
+            this.LogBox_Omnicrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.LogBox_Omnicrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogBox_Omnicrom.Location = new System.Drawing.Point(1, 2);
+            this.LogBox_Omnicrom.Margin = new System.Windows.Forms.Padding(1);
+            this.LogBox_Omnicrom.Name = "LogBox_Omnicrom";
+            this.LogBox_Omnicrom.ReadOnly = true;
+            this.LogBox_Omnicrom.Size = new System.Drawing.Size(226, 315);
+            this.LogBox_Omnicrom.TabIndex = 6;
+            this.LogBox_Omnicrom.Text = "";
+            this.LogBox_Omnicrom.TextChanged += new System.EventHandler(this.LogBox_Omnicrom_TextChanged);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
@@ -1403,6 +2072,211 @@ namespace Omnicrom
             this.menuStrip1.Size = new System.Drawing.Size(992, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.restartOmnicromStripMenuItem,
+            this.openOMTToolStripMenuItem,
+            this.openOMTappsStripMenuItem1,
+            this.toolStripSeparator,
+            this.saveLogsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.printToolStripMenuItem,
+            this.printPreviewToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.logoutStripMenuItem,
+            this.restartStripMenuItem,
+            this.shutdownStripMenuItem,
+            this.toolStripSeparator3,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.fileToolStripMenuItem.Image = global::Omnicrom.Properties.Resources.blank_report;
+            this.fileToolStripMenuItem.ImageTransparentColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.fileToolStripMenuItem.Text = " &File";
+            this.fileToolStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.refreshToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshToolStripMenuItem.Image")));
+            this.refreshToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.refreshToolStripMenuItem.Text = "&Refresh";
+            // 
+            // restartOmnicromStripMenuItem
+            // 
+            this.restartOmnicromStripMenuItem.Name = "restartOmnicromStripMenuItem";
+            this.restartOmnicromStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.restartOmnicromStripMenuItem.Text = "Restart Omni&crom";
+            // 
+            // openOMTToolStripMenuItem
+            // 
+            this.openOMTToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openOMTToolStripMenuItem.Image")));
+            this.openOMTToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openOMTToolStripMenuItem.Name = "openOMTToolStripMenuItem";
+            this.openOMTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openOMTToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.openOMTToolStripMenuItem.Text = "Open &OMT";
+            // 
+            // openOMTappsStripMenuItem1
+            // 
+            this.openOMTappsStripMenuItem1.Name = "openOMTappsStripMenuItem1";
+            this.openOMTappsStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.openOMTappsStripMenuItem1.Text = "Open OMT&apps";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(172, 6);
+            // 
+            // saveLogsToolStripMenuItem
+            // 
+            this.saveLogsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveLogsToolStripMenuItem.Image")));
+            this.saveLogsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveLogsToolStripMenuItem.Name = "saveLogsToolStripMenuItem";
+            this.saveLogsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveLogsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.saveLogsToolStripMenuItem.Text = "Save &Logs";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
+            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.printToolStripMenuItem.Text = "&Print";
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
+            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(172, 6);
+            // 
+            // logoutStripMenuItem
+            // 
+            this.logoutStripMenuItem.Name = "logoutStripMenuItem";
+            this.logoutStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.logoutStripMenuItem.Text = "&Logout";
+            // 
+            // restartStripMenuItem
+            // 
+            this.restartStripMenuItem.Name = "restartStripMenuItem";
+            this.restartStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.restartStripMenuItem.Text = "Re&start";
+            // 
+            // shutdownStripMenuItem
+            // 
+            this.shutdownStripMenuItem.Name = "shutdownStripMenuItem";
+            this.shutdownStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.shutdownStripMenuItem.Text = "Shut&down";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(172, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customizeToolStripMenuItem,
+            this.optionsToolStripMenuItem});
+            this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.toolsToolStripMenuItem.Image = global::Omnicrom.Properties.Resources.setting_tools;
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.toolsToolStripMenuItem.Text = " &Tools";
+            this.toolsToolStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.customizeToolStripMenuItem.Text = "&Customize";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // themeStripMenuItem
+            // 
+            this.themeStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.themeStripMenuItem.Image = global::Omnicrom.Properties.Resources.application_view_icons;
+            this.themeStripMenuItem.Name = "themeStripMenuItem";
+            this.themeStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.themeStripMenuItem.Text = " Th&eme";
+            this.themeStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contentsToolStripMenuItem,
+            this.indexToolStripMenuItem,
+            this.searchToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.helpToolStripMenuItem.Image = global::Omnicrom.Properties.Resources.help;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.helpToolStripMenuItem.Text = " &Help";
+            this.helpToolStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
+            // 
+            // contentsToolStripMenuItem
+            // 
+            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.contentsToolStripMenuItem.Text = "&Contents";
+            // 
+            // indexToolStripMenuItem
+            // 
+            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.indexToolStripMenuItem.Text = "&Index";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.searchToolStripMenuItem.Text = "&Search";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // Label_ToolTip_DisplayText
             // 
@@ -1745,882 +2619,6 @@ namespace Omnicrom
             ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_Find.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_Find.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
             // 
-            // ViewPage_Logs_QuickTools
-            // 
-            this.ViewPage_Logs_QuickTools.BackColor = System.Drawing.Color.Transparent;
-            this.ViewPage_Logs_QuickTools.Controls.Add(this.radPanel3);
-            this.ViewPage_Logs_QuickTools.Image = global::Omnicrom.Properties.Resources.terminal_32;
-            this.ViewPage_Logs_QuickTools.ItemSize = new System.Drawing.SizeF(40F, 40F);
-            this.ViewPage_Logs_QuickTools.Location = new System.Drawing.Point(5, 46);
-            this.ViewPage_Logs_QuickTools.Name = "ViewPage_Logs_QuickTools";
-            this.ViewPage_Logs_QuickTools.Size = new System.Drawing.Size(229, 321);
-            // 
-            // radPanel3
-            // 
-            this.radPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.radPanel3.Controls.Add(this.radPictureBox2);
-            this.radPanel3.Controls.Add(this.radGroupBox6);
-            this.radPanel3.Location = new System.Drawing.Point(0, 2);
-            this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(229, 319);
-            this.radPanel3.TabIndex = 3;
-            this.radPanel3.ThemeName = "VisualStudio2022Light";
-            // 
-            // radPictureBox2
-            // 
-            this.radPictureBox2.Image = global::Omnicrom.Properties.Resources.toolbox;
-            this.radPictureBox2.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
-            this.radPictureBox2.Location = new System.Drawing.Point(12, 8);
-            this.radPictureBox2.Name = "radPictureBox2";
-            this.radPictureBox2.Size = new System.Drawing.Size(22, 22);
-            this.radPictureBox2.TabIndex = 8;
-            // 
-            // radGroupBox6
-            // 
-            this.radGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.radGroupBox6.Controls.Add(this.radButton12);
-            this.radGroupBox6.Controls.Add(this.radButton9);
-            this.radGroupBox6.Controls.Add(this.radButton14);
-            this.radGroupBox6.Controls.Add(this.Button_Logs_PowerShell);
-            this.radGroupBox6.Controls.Add(this.radButton10);
-            this.radGroupBox6.Controls.Add(this.radButton18);
-            this.radGroupBox6.Controls.Add(this.Button_Logs_CMD);
-            this.radGroupBox6.Controls.Add(this.radButton11);
-            this.radGroupBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.radGroupBox6.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            this.radGroupBox6.HeaderText = "                   Quick Tools";
-            this.radGroupBox6.Location = new System.Drawing.Point(9, 11);
-            this.radGroupBox6.Name = "radGroupBox6";
-            this.radGroupBox6.Size = new System.Drawing.Size(124, 109);
-            this.radGroupBox6.TabIndex = 7;
-            this.radGroupBox6.Text = "                   Quick Tools";
-            this.radGroupBox6.ThemeName = "VisualStudio2012Dark";
-            this.radGroupBox6.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.GroupBoxHeader)(this.radGroupBox6.GetChildAt(0).GetChildAt(1))).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radGroupBox6.GetChildAt(0).GetChildAt(1).GetChildAt(0))).BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            // 
-            // radButton12
-            // 
-            this.radButton12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton12.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton12.Image = global::Omnicrom.Properties.Resources.Actions_document_decrypt_icon_icon;
-            this.radButton12.Location = new System.Drawing.Point(98, 61);
-            this.radButton12.Name = "radButton12";
-            this.radButton12.Size = new System.Drawing.Size(25, 25);
-            this.radButton12.TabIndex = 10;
-            this.radButton12.ThemeName = "CrystalDark";
-            this.radButton12.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton12.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Actions_document_decrypt_icon_icon;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton12.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton12.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton12.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton12.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton9
-            // 
-            this.radButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton9.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton9.Image = global::Omnicrom.Properties.Resources.health;
-            this.radButton9.Location = new System.Drawing.Point(36, 29);
-            this.radButton9.Name = "radButton9";
-            this.radButton9.Size = new System.Drawing.Size(25, 25);
-            this.radButton9.TabIndex = 5;
-            this.radButton9.ThemeName = "CrystalDark";
-            this.radButton9.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton9.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.health;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton9.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton9.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton9.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton9.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton14
-            // 
-            this.radButton14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton14.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton14.Image = global::Omnicrom.Properties.Resources.information;
-            this.radButton14.Location = new System.Drawing.Point(67, 61);
-            this.radButton14.Name = "radButton14";
-            this.radButton14.Size = new System.Drawing.Size(25, 25);
-            this.radButton14.TabIndex = 9;
-            this.radButton14.ThemeName = "CrystalDark";
-            this.radButton14.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton14.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.information;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton14.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton14.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton14.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton14.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // Button_Logs_PowerShell
-            // 
-            this.Button_Logs_PowerShell.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Logs_PowerShell.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.Button_Logs_PowerShell.Image = global::Omnicrom.Properties.Resources.application_xp_terminal;
-            this.Button_Logs_PowerShell.Location = new System.Drawing.Point(5, 61);
-            this.Button_Logs_PowerShell.Name = "Button_Logs_PowerShell";
-            this.Button_Logs_PowerShell.Size = new System.Drawing.Size(25, 25);
-            this.Button_Logs_PowerShell.TabIndex = 3;
-            this.Button_Logs_PowerShell.ThemeName = "CrystalDark";
-            this.Button_Logs_PowerShell.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_PowerShell.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.application_xp_terminal;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_PowerShell.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_PowerShell.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton10
-            // 
-            this.radButton10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton10.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton10.Image = global::Omnicrom.Properties.Resources.broom;
-            this.radButton10.Location = new System.Drawing.Point(67, 29);
-            this.radButton10.Name = "radButton10";
-            this.radButton10.Size = new System.Drawing.Size(25, 25);
-            this.radButton10.TabIndex = 6;
-            this.radButton10.ThemeName = "CrystalDark";
-            this.radButton10.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton10.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.broom;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton10.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton10.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton10.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton10.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton18
-            // 
-            this.radButton18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton18.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton18.Image = global::Omnicrom.Properties.Resources.books_stack;
-            this.radButton18.Location = new System.Drawing.Point(36, 61);
-            this.radButton18.Name = "radButton18";
-            this.radButton18.Size = new System.Drawing.Size(25, 25);
-            this.radButton18.TabIndex = 8;
-            this.radButton18.ThemeName = "CrystalDark";
-            this.radButton18.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton18.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.books_stack;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton18.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton18.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton18.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton18.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // Button_Logs_CMD
-            // 
-            this.Button_Logs_CMD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Logs_CMD.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.Button_Logs_CMD.Image = global::Omnicrom.Properties.Resources.application_osx_terminal;
-            this.Button_Logs_CMD.Location = new System.Drawing.Point(5, 29);
-            this.Button_Logs_CMD.Name = "Button_Logs_CMD";
-            this.Button_Logs_CMD.Size = new System.Drawing.Size(25, 25);
-            this.Button_Logs_CMD.TabIndex = 4;
-            this.Button_Logs_CMD.ThemeName = "CrystalDark";
-            this.Button_Logs_CMD.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_CMD.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.application_osx_terminal;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Logs_CMD.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Logs_CMD.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton11
-            // 
-            this.radButton11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton11.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton11.Image = global::Omnicrom.Properties.Resources.folder_user;
-            this.radButton11.Location = new System.Drawing.Point(98, 29);
-            this.radButton11.Name = "radButton11";
-            this.radButton11.Size = new System.Drawing.Size(25, 25);
-            this.radButton11.TabIndex = 7;
-            this.radButton11.ThemeName = "CrystalDark";
-            this.radButton11.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton11.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.folder_user;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton11.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton11.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton11.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton11.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // ViewPage_Logs_USMT
-            // 
-            this.ViewPage_Logs_USMT.Controls.Add(this.radPanel2);
-            this.ViewPage_Logs_USMT.Image = global::Omnicrom.Properties.Resources.miglog2_32;
-            this.ViewPage_Logs_USMT.ItemSize = new System.Drawing.SizeF(40F, 40F);
-            this.ViewPage_Logs_USMT.Location = new System.Drawing.Point(5, 46);
-            this.ViewPage_Logs_USMT.Name = "ViewPage_Logs_USMT";
-            this.ViewPage_Logs_USMT.Size = new System.Drawing.Size(229, 321);
-            // 
-            // radPanel2
-            // 
-            this.radPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.radPanel2.Location = new System.Drawing.Point(0, 2);
-            this.radPanel2.Name = "radPanel2";
-            this.radPanel2.Size = new System.Drawing.Size(229, 319);
-            this.radPanel2.TabIndex = 2;
-            this.radPanel2.ThemeName = "VisualStudio2022Light";
-            // 
-            // ViewPage_Logs_AppInstaller
-            // 
-            this.ViewPage_Logs_AppInstaller.Controls.Add(this.radPanel4);
-            this.ViewPage_Logs_AppInstaller.Image = global::Omnicrom.Properties.Resources.AppLog_32;
-            this.ViewPage_Logs_AppInstaller.ItemSize = new System.Drawing.SizeF(40F, 40F);
-            this.ViewPage_Logs_AppInstaller.Location = new System.Drawing.Point(5, 46);
-            this.ViewPage_Logs_AppInstaller.Name = "ViewPage_Logs_AppInstaller";
-            this.ViewPage_Logs_AppInstaller.Size = new System.Drawing.Size(229, 321);
-            // 
-            // radPanel4
-            // 
-            this.radPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.radPanel4.Location = new System.Drawing.Point(0, 2);
-            this.radPanel4.Name = "radPanel4";
-            this.radPanel4.Size = new System.Drawing.Size(229, 319);
-            this.radPanel4.TabIndex = 3;
-            this.radPanel4.ThemeName = "VisualStudio2022Light";
-            // 
-            // ViewPage_Logs_Omnicrom
-            // 
-            this.ViewPage_Logs_Omnicrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ViewPage_Logs_Omnicrom.Controls.Add(this.radPanel5);
-            this.ViewPage_Logs_Omnicrom.Image = global::Omnicrom.Properties.Resources.globaltechlog_32;
-            this.ViewPage_Logs_Omnicrom.ItemSize = new System.Drawing.SizeF(40F, 40F);
-            this.ViewPage_Logs_Omnicrom.Location = new System.Drawing.Point(5, 46);
-            this.ViewPage_Logs_Omnicrom.Name = "ViewPage_Logs_Omnicrom";
-            this.ViewPage_Logs_Omnicrom.Size = new System.Drawing.Size(229, 321);
-            // 
-            // radPanel5
-            // 
-            this.radPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.radPanel5.Controls.Add(this.LogBox_Omnicrom);
-            this.radPanel5.Location = new System.Drawing.Point(0, 2);
-            this.radPanel5.Name = "radPanel5";
-            this.radPanel5.Size = new System.Drawing.Size(229, 319);
-            this.radPanel5.TabIndex = 3;
-            this.radPanel5.ThemeName = "VisualStudio2022Light";
-            // 
-            // LogBox_Omnicrom
-            // 
-            this.LogBox_Omnicrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.LogBox_Omnicrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LogBox_Omnicrom.Location = new System.Drawing.Point(1, 2);
-            this.LogBox_Omnicrom.Margin = new System.Windows.Forms.Padding(1);
-            this.LogBox_Omnicrom.Name = "LogBox_Omnicrom";
-            this.LogBox_Omnicrom.ReadOnly = true;
-            this.LogBox_Omnicrom.Size = new System.Drawing.Size(226, 315);
-            this.LogBox_Omnicrom.TabIndex = 6;
-            this.LogBox_Omnicrom.Text = "";
-            this.LogBox_Omnicrom.TextChanged += new System.EventHandler(this.LogBox_Omnicrom_TextChanged);
-            // 
-            // radPictureBox4
-            // 
-            this.radPictureBox4.Image = global::Omnicrom.Properties.Resources.laptop;
-            this.radPictureBox4.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
-            this.radPictureBox4.Location = new System.Drawing.Point(5, 161);
-            this.radPictureBox4.Name = "radPictureBox4";
-            this.radPictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.radPictureBox4.TabIndex = 3;
-            this.radPictureBox4.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // radPictureBox1
-            // 
-            this.radPictureBox1.Image = global::Omnicrom.Properties.Resources.Exe__Execute__Gears__Package__Settings__System__Utilities__Wheels_icon_icon__1_;
-            this.radPictureBox1.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
-            this.radPictureBox1.Location = new System.Drawing.Point(166, 158);
-            this.radPictureBox1.Name = "radPictureBox1";
-            this.radPictureBox1.Size = new System.Drawing.Size(22, 22);
-            this.radPictureBox1.TabIndex = 2;
-            this.radPictureBox1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // PictureBox_Status_Ok
-            // 
-            this.PictureBox_Status_Ok.Image = global::Omnicrom.Properties.Resources.CheckMark_small_50;
-            this.PictureBox_Status_Ok.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
-            this.PictureBox_Status_Ok.Location = new System.Drawing.Point(0, -1);
-            this.PictureBox_Status_Ok.Name = "PictureBox_Status_Ok";
-            this.PictureBox_Status_Ok.Size = new System.Drawing.Size(20, 20);
-            this.PictureBox_Status_Ok.TabIndex = 4;
-            this.PictureBox_Status_Ok.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // Button_Machine_TaskManager
-            // 
-            this.Button_Machine_TaskManager.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Machine_TaskManager.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.Button_Machine_TaskManager.Image = global::Omnicrom.Properties.Resources.system_monitor;
-            this.Button_Machine_TaskManager.Location = new System.Drawing.Point(113, 106);
-            this.Button_Machine_TaskManager.Name = "Button_Machine_TaskManager";
-            this.Button_Machine_TaskManager.Size = new System.Drawing.Size(25, 25);
-            this.Button_Machine_TaskManager.TabIndex = 5;
-            this.Button_Machine_TaskManager.ThemeName = "CrystalDark";
-            this.Button_Machine_TaskManager.Click += new System.EventHandler(this.Button_Machine_TaskManager_Click);
-            this.Button_Machine_TaskManager.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            this.Button_Machine_TaskManager.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_TaskManager_MouseMove);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_TaskManager.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.system_monitor;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_TaskManager.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_TaskManager.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // Button_Machine_Restart
-            // 
-            this.Button_Machine_Restart.Controls.Add(this.radButton15);
-            this.Button_Machine_Restart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Machine_Restart.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.Button_Machine_Restart.Image = global::Omnicrom.Properties.Resources.restart_icon_icon;
-            this.Button_Machine_Restart.Location = new System.Drawing.Point(113, 50);
-            this.Button_Machine_Restart.Name = "Button_Machine_Restart";
-            this.Button_Machine_Restart.Size = new System.Drawing.Size(25, 25);
-            this.Button_Machine_Restart.TabIndex = 8;
-            this.Button_Machine_Restart.ThemeName = "CrystalDark";
-            this.Button_Machine_Restart.Click += new System.EventHandler(this.Button_Machine_Restart_Click);
-            this.Button_Machine_Restart.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            this.Button_Machine_Restart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_Restart_MouseMove);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Restart.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.restart_icon_icon;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Restart.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Restart.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton15
-            // 
-            this.radButton15.Image = global::Omnicrom.Properties.Resources.Exit_31x31;
-            this.radButton15.Location = new System.Drawing.Point(0, 30);
-            this.radButton15.Name = "radButton15";
-            this.radButton15.Size = new System.Drawing.Size(25, 25);
-            this.radButton15.TabIndex = 1;
-            this.radButton15.ThemeName = "CrystalDark";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton15.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Exit_31x31;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton15.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton15.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton15.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // Button_Machine_Shutdown
-            // 
-            this.Button_Machine_Shutdown.Controls.Add(this.radButton13);
-            this.Button_Machine_Shutdown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Machine_Shutdown.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.Button_Machine_Shutdown.Image = global::Omnicrom.Properties.Resources.poweroff_icon_icon;
-            this.Button_Machine_Shutdown.Location = new System.Drawing.Point(113, 78);
-            this.Button_Machine_Shutdown.Name = "Button_Machine_Shutdown";
-            this.Button_Machine_Shutdown.Size = new System.Drawing.Size(25, 25);
-            this.Button_Machine_Shutdown.TabIndex = 7;
-            this.Button_Machine_Shutdown.ThemeName = "CrystalDark";
-            this.Button_Machine_Shutdown.Click += new System.EventHandler(this.Button_Machine_Shutdown_Click);
-            this.Button_Machine_Shutdown.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            this.Button_Machine_Shutdown.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_Shutdown_MouseMove);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Shutdown.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.poweroff_icon_icon;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_Shutdown.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_Shutdown.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton13
-            // 
-            this.radButton13.Image = global::Omnicrom.Properties.Resources.Exit_31x31;
-            this.radButton13.Location = new System.Drawing.Point(0, 30);
-            this.radButton13.Name = "radButton13";
-            this.radButton13.Size = new System.Drawing.Size(25, 25);
-            this.radButton13.TabIndex = 1;
-            this.radButton13.ThemeName = "CrystalDark";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton13.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Exit_31x31;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton13.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton13.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton13.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // Button_Machine_LogOut
-            // 
-            this.Button_Machine_LogOut.Controls.Add(this.radButton4);
-            this.Button_Machine_LogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_Machine_LogOut.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.Button_Machine_LogOut.Image = global::Omnicrom.Properties.Resources.hibernate_icon_icon;
-            this.Button_Machine_LogOut.Location = new System.Drawing.Point(113, 22);
-            this.Button_Machine_LogOut.Name = "Button_Machine_LogOut";
-            this.Button_Machine_LogOut.Size = new System.Drawing.Size(25, 25);
-            this.Button_Machine_LogOut.TabIndex = 2;
-            this.Button_Machine_LogOut.ThemeName = "CrystalDark";
-            this.Button_Machine_LogOut.Click += new System.EventHandler(this.Button_Machine_LogOut_Click);
-            this.Button_Machine_LogOut.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            this.Button_Machine_LogOut.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button_Machine_LogOut_MouseMove);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_LogOut.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.hibernate_icon_icon;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.Button_Machine_LogOut.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.Button_Machine_LogOut.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // radButton4
-            // 
-            this.radButton4.Image = global::Omnicrom.Properties.Resources.Exit_31x31;
-            this.radButton4.Location = new System.Drawing.Point(0, 30);
-            this.radButton4.Name = "radButton4";
-            this.radButton4.Size = new System.Drawing.Size(25, 25);
-            this.radButton4.TabIndex = 1;
-            this.radButton4.ThemeName = "CrystalDark";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton4.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.Exit_31x31;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton4.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton4.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton4.GetChildAt(0).GetChildAt(1).GetChildAt(0))).ImageScaling = Telerik.WinControls.Enumerations.ImageScaling.SizeToFit;
-            // 
-            // PictureBox_Status_Warn
-            // 
-            this.PictureBox_Status_Warn.Image = global::Omnicrom.Properties.Resources.warn_32;
-            this.PictureBox_Status_Warn.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
-            this.PictureBox_Status_Warn.Location = new System.Drawing.Point(4, 310);
-            this.PictureBox_Status_Warn.Name = "PictureBox_Status_Warn";
-            this.PictureBox_Status_Warn.Size = new System.Drawing.Size(20, 20);
-            this.PictureBox_Status_Warn.TabIndex = 8;
-            // 
-            // PictureBox_Status_Error
-            // 
-            this.PictureBox_Status_Error.Image = global::Omnicrom.Properties.Resources.Quit_icon_icon__1_;
-            this.PictureBox_Status_Error.ImageLayout = Telerik.WinControls.UI.RadImageLayout.Stretch;
-            this.PictureBox_Status_Error.Location = new System.Drawing.Point(4, 310);
-            this.PictureBox_Status_Error.Name = "PictureBox_Status_Error";
-            this.PictureBox_Status_Error.Size = new System.Drawing.Size(20, 20);
-            this.PictureBox_Status_Error.TabIndex = 7;
-            // 
-            // ViewPage_Main_USMT
-            // 
-            this.ViewPage_Main_USMT.Controls.Add(this.radButton3);
-            this.ViewPage_Main_USMT.Image = global::Omnicrom.Properties.Resources.Mig_normal_small__2_;
-            this.ViewPage_Main_USMT.ItemSize = new System.Drawing.SizeF(53F, 42F);
-            this.ViewPage_Main_USMT.Location = new System.Drawing.Point(58, 4);
-            this.ViewPage_Main_USMT.Name = "ViewPage_Main_USMT";
-            this.ViewPage_Main_USMT.Size = new System.Drawing.Size(413, 364);
-            // 
-            // radButton3
-            // 
-            this.radButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radButton3.DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            this.radButton3.Image = global::Omnicrom.Properties.Resources.clipboard_icon_icon;
-            this.radButton3.Location = new System.Drawing.Point(182, 155);
-            this.radButton3.Name = "radButton3";
-            this.radButton3.Size = new System.Drawing.Size(19, 20);
-            this.radButton3.TabIndex = 1;
-            this.radButton3.ThemeName = "CrystalDark";
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton3.GetChildAt(0))).Image = global::Omnicrom.Properties.Resources.clipboard_icon_icon;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.radButton3.GetChildAt(0))).DisplayStyle = Telerik.WinControls.DisplayStyle.Image;
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton3.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(1);
-            ((Telerik.WinControls.Layouts.ImageAndTextLayoutPanel)(this.radButton3.GetChildAt(0).GetChildAt(1))).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentPadding;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton3.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchHorizontally = true;
-            ((Telerik.WinControls.Primitives.ImagePrimitive)(this.radButton3.GetChildAt(0).GetChildAt(1).GetChildAt(0))).StretchVertically = true;
-            // 
-            // ViewPage_Main_AppInstaller
-            // 
-            this.ViewPage_Main_AppInstaller.Image = global::Omnicrom.Properties.Resources.Applications_small_normal__2_;
-            this.ViewPage_Main_AppInstaller.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ViewPage_Main_AppInstaller.ItemSize = new System.Drawing.SizeF(53F, 49F);
-            this.ViewPage_Main_AppInstaller.Location = new System.Drawing.Point(60, 4);
-            this.ViewPage_Main_AppInstaller.Name = "ViewPage_Main_AppInstaller";
-            this.ViewPage_Main_AppInstaller.Size = new System.Drawing.Size(411, 364);
-            // 
-            // ViewPage_Main_Tools
-            // 
-            this.ViewPage_Main_Tools.Controls.Add(this.radButton6);
-            this.ViewPage_Main_Tools.Controls.Add(this.radLabel2);
-            this.ViewPage_Main_Tools.Controls.Add(this.radWaitingBar1);
-            this.ViewPage_Main_Tools.Controls.Add(this.radButton5);
-            this.ViewPage_Main_Tools.Controls.Add(this.radButton7);
-            this.ViewPage_Main_Tools.Controls.Add(this.radButton1);
-            this.ViewPage_Main_Tools.Controls.Add(this.radLabel1);
-            this.ViewPage_Main_Tools.Controls.Add(this.PageView_Tools);
-            this.ViewPage_Main_Tools.Image = global::Omnicrom.Properties.Resources.ToolBox_normal_smll__2_;
-            this.ViewPage_Main_Tools.ItemSize = new System.Drawing.SizeF(53F, 39F);
-            this.ViewPage_Main_Tools.Location = new System.Drawing.Point(58, 4);
-            this.ViewPage_Main_Tools.Name = "ViewPage_Main_Tools";
-            this.ViewPage_Main_Tools.Size = new System.Drawing.Size(413, 364);
-            // 
-            // radButton6
-            // 
-            this.radButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.radButton6.Location = new System.Drawing.Point(342, 189);
-            this.radButton6.Name = "radButton6";
-            this.radButton6.Size = new System.Drawing.Size(68, 39);
-            this.radButton6.TabIndex = 12;
-            this.radButton6.Text = "Prog";
-            this.radButton6.ThemeName = "CrystalDark";
-            this.radButton6.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.radLabel2.Location = new System.Drawing.Point(334, 326);
-            this.radLabel2.Margin = new System.Windows.Forms.Padding(0);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(85, 15);
-            this.radLabel2.TabIndex = 5;
-            this.radLabel2.Text = "Running Command";
-            this.radLabel2.ThemeName = "VisualStudio2012Dark";
-            this.radLabel2.Visible = false;
-            this.radLabel2.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // radWaitingBar1
-            // 
-            this.radWaitingBar1.BackColor = System.Drawing.Color.Transparent;
-            this.radWaitingBar1.Location = new System.Drawing.Point(335, 339);
-            this.radWaitingBar1.Name = "radWaitingBar1";
-            this.radWaitingBar1.Size = new System.Drawing.Size(83, 10);
-            this.radWaitingBar1.TabIndex = 0;
-            this.radWaitingBar1.Text = "radWaitingBar1";
-            this.radWaitingBar1.Visible = false;
-            this.radWaitingBar1.WaitingIndicators.Add(this.dotsLineWaitingBarIndicatorElement1);
-            this.radWaitingBar1.WaitingIndicatorSize = new System.Drawing.Size(100, 14);
-            this.radWaitingBar1.WaitingSpeed = 80;
-            this.radWaitingBar1.WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.DotsLine;
-            this.radWaitingBar1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar1.GetChildAt(0))).WaitingIndicatorSize = new System.Drawing.Size(100, 14);
-            ((Telerik.WinControls.UI.RadWaitingBarElement)(this.radWaitingBar1.GetChildAt(0))).WaitingSpeed = 80;
-            ((Telerik.WinControls.UI.WaitingBarContentElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0))).WaitingStyle = Telerik.WinControls.Enumerations.WaitingBarStyles.DotsLine;
-            ((Telerik.WinControls.UI.WaitingBarSeparatorElement)(this.radWaitingBar1.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Dash = false;
-            // 
-            // dotsLineWaitingBarIndicatorElement1
-            // 
-            this.dotsLineWaitingBarIndicatorElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.dotsLineWaitingBarIndicatorElement1.Name = "dotsLineWaitingBarIndicatorElement1";
-            this.dotsLineWaitingBarIndicatorElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.dotsLineWaitingBarIndicatorElement1.UseCompatibleTextRendering = false;
-            // 
-            // radButton5
-            // 
-            this.radButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.radButton5.Location = new System.Drawing.Point(342, 105);
-            this.radButton5.Name = "radButton5";
-            this.radButton5.Size = new System.Drawing.Size(68, 39);
-            this.radButton5.TabIndex = 10;
-            this.radButton5.Text = "Store";
-            this.radButton5.ThemeName = "CrystalDark";
-            this.radButton5.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // radButton7
-            // 
-            this.radButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.radButton7.Location = new System.Drawing.Point(342, 147);
-            this.radButton7.Name = "radButton7";
-            this.radButton7.Size = new System.Drawing.Size(68, 39);
-            this.radButton7.TabIndex = 11;
-            this.radButton7.Text = "Apps";
-            this.radButton7.ThemeName = "CrystalDark";
-            this.radButton7.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // radButton1
-            // 
-            this.radButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.radButton1.Location = new System.Drawing.Point(342, 63);
-            this.radButton1.Name = "radButton1";
-            this.radButton1.Size = new System.Drawing.Size(68, 39);
-            this.radButton1.TabIndex = 9;
-            this.radButton1.Text = "USMT";
-            this.radButton1.ThemeName = "CrystalDark";
-            this.radButton1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.ForeColor = System.Drawing.Color.DimGray;
-            this.radLabel1.Image = global::Omnicrom.Properties.Resources.network_folder;
-            this.radLabel1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radLabel1.Location = new System.Drawing.Point(338, 4);
-            this.radLabel1.Margin = new System.Windows.Forms.Padding(0);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(81, 56);
-            this.radLabel1.TabIndex = 8;
-            this.radLabel1.Text = "Directories";
-            this.radLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radLabel1.ThemeName = "VisualStudio2012Dark";
-            this.radLabel1.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // PageView_Tools
-            // 
-            this.PageView_Tools.Controls.Add(this.ViewPage_Tools_Fixes);
-            this.PageView_Tools.Controls.Add(this.ViewPage_Tools_Tools);
-            this.PageView_Tools.Controls.Add(this.ViewPage_Tools_Installers);
-            this.PageView_Tools.DefaultPage = this.ViewPage_Tools_Fixes;
-            this.PageView_Tools.Location = new System.Drawing.Point(0, 0);
-            this.PageView_Tools.Name = "PageView_Tools";
-            this.PageView_Tools.SelectedPage = this.ViewPage_Tools_Fixes;
-            this.PageView_Tools.Size = new System.Drawing.Size(332, 363);
-            this.PageView_Tools.TabIndex = 0;
-            this.PageView_Tools.ThemeName = "CrystalDark";
-            // 
-            // ViewPage_Tools_Fixes
-            // 
-            this.ViewPage_Tools_Fixes.ItemSize = new System.Drawing.SizeF(47F, 28F);
-            this.ViewPage_Tools_Fixes.Location = new System.Drawing.Point(6, 33);
-            this.ViewPage_Tools_Fixes.Name = "ViewPage_Tools_Fixes";
-            this.ViewPage_Tools_Fixes.Size = new System.Drawing.Size(320, 323);
-            this.ViewPage_Tools_Fixes.Text = "Fixes";
-            // 
-            // ViewPage_Tools_Tools
-            // 
-            this.ViewPage_Tools_Tools.ItemSize = new System.Drawing.SizeF(49F, 28F);
-            this.ViewPage_Tools_Tools.Location = new System.Drawing.Point(6, 33);
-            this.ViewPage_Tools_Tools.Name = "ViewPage_Tools_Tools";
-            this.ViewPage_Tools_Tools.Size = new System.Drawing.Size(320, 323);
-            this.ViewPage_Tools_Tools.Text = "Tools";
-            // 
-            // ViewPage_Tools_Installers
-            // 
-            this.ViewPage_Tools_Installers.ItemSize = new System.Drawing.SizeF(71F, 28F);
-            this.ViewPage_Tools_Installers.Location = new System.Drawing.Point(6, 33);
-            this.ViewPage_Tools_Installers.Name = "ViewPage_Tools_Installers";
-            this.ViewPage_Tools_Installers.Size = new System.Drawing.Size(320, 323);
-            this.ViewPage_Tools_Installers.Text = "Installers";
-            // 
-            // ViewPage_Main_Links
-            // 
-            this.ViewPage_Main_Links.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ViewPage_Main_Links.Image = global::Omnicrom.Properties.Resources.Links_tiny_normal__2_1;
-            this.ViewPage_Main_Links.ItemSize = new System.Drawing.SizeF(53F, 47F);
-            this.ViewPage_Main_Links.Location = new System.Drawing.Point(58, 4);
-            this.ViewPage_Main_Links.Name = "ViewPage_Main_Links";
-            this.ViewPage_Main_Links.Size = new System.Drawing.Size(413, 364);
-            this.ViewPage_Main_Links.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem,
-            this.restartOmnicromStripMenuItem,
-            this.openOMTToolStripMenuItem,
-            this.openOMTappsStripMenuItem1,
-            this.toolStripSeparator,
-            this.saveLogsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.printToolStripMenuItem,
-            this.printPreviewToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.logoutStripMenuItem,
-            this.restartStripMenuItem,
-            this.shutdownStripMenuItem,
-            this.toolStripSeparator3,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
-            this.fileToolStripMenuItem.Image = global::Omnicrom.Properties.Resources.blank_report;
-            this.fileToolStripMenuItem.ImageTransparentColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.fileToolStripMenuItem.Text = " &File";
-            this.fileToolStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.refreshToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshToolStripMenuItem.Image")));
-            this.refreshToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.refreshToolStripMenuItem.Text = "&Refresh";
-            // 
-            // restartOmnicromStripMenuItem
-            // 
-            this.restartOmnicromStripMenuItem.Name = "restartOmnicromStripMenuItem";
-            this.restartOmnicromStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.restartOmnicromStripMenuItem.Text = "Restart Omni&crom";
-            // 
-            // openOMTToolStripMenuItem
-            // 
-            this.openOMTToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openOMTToolStripMenuItem.Image")));
-            this.openOMTToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openOMTToolStripMenuItem.Name = "openOMTToolStripMenuItem";
-            this.openOMTToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openOMTToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.openOMTToolStripMenuItem.Text = "Open &OMT";
-            // 
-            // openOMTappsStripMenuItem1
-            // 
-            this.openOMTappsStripMenuItem1.Name = "openOMTappsStripMenuItem1";
-            this.openOMTappsStripMenuItem1.Size = new System.Drawing.Size(175, 22);
-            this.openOMTappsStripMenuItem1.Text = "Open OMT&apps";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(172, 6);
-            // 
-            // saveLogsToolStripMenuItem
-            // 
-            this.saveLogsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveLogsToolStripMenuItem.Image")));
-            this.saveLogsToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveLogsToolStripMenuItem.Name = "saveLogsToolStripMenuItem";
-            this.saveLogsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveLogsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.saveLogsToolStripMenuItem.Text = "Save &Logs";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(172, 6);
-            // 
-            // logoutStripMenuItem
-            // 
-            this.logoutStripMenuItem.Name = "logoutStripMenuItem";
-            this.logoutStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.logoutStripMenuItem.Text = "&Logout";
-            // 
-            // restartStripMenuItem
-            // 
-            this.restartStripMenuItem.Name = "restartStripMenuItem";
-            this.restartStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.restartStripMenuItem.Text = "Re&start";
-            // 
-            // shutdownStripMenuItem
-            // 
-            this.shutdownStripMenuItem.Name = "shutdownStripMenuItem";
-            this.shutdownStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.shutdownStripMenuItem.Text = "Shut&down";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(172, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // toolsToolStripMenuItem
-            // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem,
-            this.optionsToolStripMenuItem});
-            this.toolsToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
-            this.toolsToolStripMenuItem.Image = global::Omnicrom.Properties.Resources.setting_tools;
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.toolsToolStripMenuItem.Text = " &Tools";
-            this.toolsToolStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.optionsToolStripMenuItem.Text = "&Options";
-            // 
-            // themeStripMenuItem
-            // 
-            this.themeStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
-            this.themeStripMenuItem.Image = global::Omnicrom.Properties.Resources.application_view_icons;
-            this.themeStripMenuItem.Name = "themeStripMenuItem";
-            this.themeStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.themeStripMenuItem.Text = " Th&eme";
-            this.themeStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contentsToolStripMenuItem,
-            this.indexToolStripMenuItem,
-            this.searchToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
-            this.helpToolStripMenuItem.Image = global::Omnicrom.Properties.Resources.help;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.helpToolStripMenuItem.Text = " &Help";
-            this.helpToolStripMenuItem.MouseLeave += new System.EventHandler(this.Reset_ToolTip_MouseLeave);
-            // 
-            // contentsToolStripMenuItem
-            // 
-            this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.contentsToolStripMenuItem.Text = "&Contents";
-            // 
-            // indexToolStripMenuItem
-            // 
-            this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.indexToolStripMenuItem.Text = "&Index";
-            // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.searchToolStripMenuItem.Text = "&Search";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.aboutToolStripMenuItem.Text = "&About...";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2650,7 +2648,7 @@ namespace Omnicrom
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1000, 495);
-            this.MinimumSize = new System.Drawing.Size(1000, 495);
+            this.MinimumSize = new System.Drawing.Size(752, 495);
             this.Name = "MainForm";
             // 
             // 
@@ -2663,20 +2661,37 @@ namespace Omnicrom
             this.Text = "Omnicrom";
             this.ThemeName = "VisualStudio2012Dark";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PageView_Main)).EndInit();
             this.PageView_Main.ResumeLayout(false);
+            this.ViewPage_Main_USMT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).EndInit();
+            this.ViewPage_Main_Tools.ResumeLayout(false);
+            this.ViewPage_Main_Tools.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PageView_Tools)).EndInit();
+            this.PageView_Tools.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             this.radPanel1.ResumeLayout(false);
             this.radPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Status)).EndInit();
             this.GroupBox_Status.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Label_Status_Indicator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Ok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Status_Description)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupBox_Settings)).EndInit();
             this.GroupBox_Settings.ResumeLayout(false);
@@ -2691,7 +2706,14 @@ namespace Omnicrom
             this.radGroupBox3.ResumeLayout(false);
             this.radGroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_Model)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_TaskManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Restart)).EndInit();
+            this.Button_Machine_Restart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_RAM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Shutdown)).EndInit();
+            this.Button_Machine_Shutdown.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_UpTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_Tag)).EndInit();
@@ -2699,6 +2721,9 @@ namespace Omnicrom
             ((System.ComponentModel.ISupportInitialize)(this.Label_Machine_Name)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_CPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_LogOut)).EndInit();
+            this.Button_Machine_LogOut.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_PGE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBar_Machine_DSK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel29)).EndInit();
@@ -2744,24 +2769,10 @@ namespace Omnicrom
             ((System.ComponentModel.ISupportInitialize)(this.Label_Drives_LocalName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Warn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PageView_Logs)).EndInit();
             this.PageView_Logs.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_ToolTip_DisplayText)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBox_Logs_FindBoxInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_Header)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBox_PageView_DriveMachineInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_PageView_Header)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StatusStrip_Main)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_OmnicromRunTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ScrollToTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Clear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ExternalOpen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Drives_RemovableImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_PageView_DriveMachineInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Find)).EndInit();
             this.ViewPage_Logs_QuickTools.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
             this.radPanel3.ResumeLayout(false);
@@ -2783,34 +2794,22 @@ namespace Omnicrom
             this.ViewPage_Logs_Omnicrom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
             this.radPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Ok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_TaskManager)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Restart)).EndInit();
-            this.Button_Machine_Restart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_Shutdown)).EndInit();
-            this.Button_Machine_Shutdown.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Button_Machine_LogOut)).EndInit();
-            this.Button_Machine_LogOut.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Warn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Status_Error)).EndInit();
-            this.ViewPage_Main_USMT.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radButton3)).EndInit();
-            this.ViewPage_Main_Tools.ResumeLayout(false);
-            this.ViewPage_Main_Tools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radWaitingBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PageView_Tools)).EndInit();
-            this.PageView_Tools.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_ToolTip_DisplayText)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBox_Logs_FindBoxInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_Header)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBox_PageView_DriveMachineInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_PageView_Header)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StatusStrip_Main)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Label_Logs_OmnicromRunTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ScrollToTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Clear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_ExternalOpen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Drives_RemovableImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_PageView_DriveMachineInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Button_Logs_Find)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

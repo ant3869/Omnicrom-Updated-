@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
@@ -113,7 +114,7 @@ namespace Omnicrom
 
         private static void Button(object sender, RoutedEventArgs e)
         {
-            Button btn = (Button)sender;
+            RadButton btn = (RadButton)sender;
 
             if (btn.Name == "btnCancel")
             {
@@ -221,8 +222,8 @@ namespace Omnicrom
         {
             UsbEventWatcher usbEventWatcher = new UsbEventWatcher(true, false);
 
-            usbEventWatcher.UsbDeviceRemoved += (_, device) => Log("Removed: " + device);
-            usbEventWatcher.UsbDeviceAdded += (_, device) => Log("Added: " + device);
+            //usbEventWatcher.UsbDeviceRemoved += (_, device) => Log("Removed: " + device);
+            //usbEventWatcher.UsbDeviceAdded += (_, device) => Log("Added: " + device);
 
             usbEventWatcher.UsbDriveEjected += (_, path) =>
             {
@@ -1343,5 +1344,386 @@ namespace Omnicrom
             form.Refresh();
             System.Windows.Forms.Application.DoEvents();
         }
+
+        // G:\Work\Resources\ModdedScripts\Batch
+        // G:\Work\Resources\Apps
+
+        public static async void StartCaffeineApp()
+        {
+            try
+            {
+                //var num = await RunProgramAsync("caffeine.exe");
+              
+                await Task.Run(() => 
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = @"G:\Work\Resources\Apps\caffeine.exe";
+                    process.Start();
+
+                    if (process.Id != 0)
+                    {
+                        StopLockID = process.Id;
+                        AddRunningProcessNumToList(StopLockID);
+                    }
+                    else
+                        Log($"Stop-Lock ID: {StopLockID}");
+                });
+
+                //if (num != 0)
+                //    StopLockID = num;          
+            }
+            catch (Exception e) { Log($"Error starting Stop-Lock: Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+        public static async void StopCaffeineAppAsync()
+        {
+            try
+            {
+                var num = await KillProcessByID(StopLockID);
+                StopLockID = num;
+
+                Log($"Stop-Lock ID: {StopLockID}");
+            }
+            catch (Exception e) { Log($"Error stopping Stop-Lock: Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+        public static async Task StartStopLockAsync()
+        {
+            try
+            {
+                await RunProgramAsync("mig.bat", "1");
+            }
+            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+        }
+
+        public static async Task StartBitlockUnlockerAsync()
+        {
+            try
+            {
+                await RunProgramAsync("mig.bat", "unlock q");
+            }
+            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+        }
+
+        private static async Task<int> KillProcessByID(int id)
+        {
+            int incid = id;
+
+            try
+            {
+                Log($"Stopping process by ID: {id}");
+
+                await Task.Run(() =>
+                {
+                    ExecutableExtensions.KillProcessAndChildren(incid);
+
+                    if (RunningProcessIDs.Contains(incid))
+                        RunningProcessIDs.Remove(incid);
+
+                    incid = 0;
+                });
+            }
+            catch (Exception e) { Log($"Error stopping proccess: Exception {e.Message} Trace {e.StackTrace}"); }
+
+            return incid;
+        }
+
+        public static async Task StopProcessAtCloseAsync()
+        {
+            if (RunningProcessIDs.Count > 0)
+            {
+                try
+                {
+                    foreach (var process in RunningProcessIDs)
+                        await KillProcessByID(process);
+                }
+                catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }       
+            }
+        }
+
+        public static async Task<int> RunProgramAsync(string app, string arguments = "")
+        {
+            int idnum = 0;
+
+            if (arguments != "")
+                Log($"Running application: {app} with the arguments: {arguments}.");
+            else
+                Log($"Running application: {app}.");
+
+            try
+            {
+                await Task.Run(() =>
+                {
+                    var process = new Process
+                    {
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            WorkingDirectory = @"G:\Work\Resources\Apps\",
+                            UseShellExecute = false,
+                            FileName = app,
+                            Arguments = arguments,
+                            Verb = "RunAs",
+                        }
+                    };
+
+                    idnum = StartCMDProcess(process);
+                });
+            }
+            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+
+            return idnum;
+        }
+
+        #region CMD Command Processor
+
+        // Variables
+        private static int CmdID;
+        public static bool CmdRunning;
+        private static Stopwatch exetime;
+        public static int TIME_OUT = 120000;
+        public static Process CMDprocess { get; set; }
+        public static string CMDapp { get; set; }
+        public static string CMDworkdir { get; set; }
+
+        public static RadWaitingBar CMDProcessWaitingBar;
+        public static Label CMDProcessLabel;
+
+        public static async Task MigMachine(string command)
+        {
+            StringBuilder sb = new StringBuilder();
+            //sb.Append("mig.bat ");
+
+            switch (command)
+            {
+                case "all": sb.Append("0"); break;
+                case "unlock": sb.Append("unlock"); break;
+                case "stoplock": sb.Append("1"); break;
+                case "offlinescan": sb.Append("offlinescan"); break;
+                case "offlineload": sb.Append("6"); break;
+                case "usmtup": sb.Append("7"); break;
+                case "usmtdown": sb.Append("8"); break;
+                case "usmt": sb.Append("2"); break;
+                case "arug": sb.Append("arug"); break;
+                case "pcmover": sb.Append("P"); break;
+                case "gpupdate": sb.Append("9"); break;
+                case "unlockremote": sb.Append("unlockremote"); break;
+                case "yubiadd": sb.Append("yubiadd"); break;
+                case "yubiremove": sb.Append("yubiremove"); break;
+                case "yubibypass": sb.Append("yubibypass"); break;
+                case "offscrub": sb.Append("offscrub"); break;
+                case "shortcut": sb.Append("shortcut"); break;
+                case "gpupdater": sb.Append("gpupdater"); break;
+                case "gpupdates": sb.Append("gpupdates"); break;
+                case "nero": sb.Append("nero"); break;
+                case "sccminstall": sb.Append("sccminstall"); break;
+                case "spaceplanning": sb.Append("spaceplanning"); break;
+                case "office365": sb.Append("office365"); break;
+                case "dragon": sb.Append("dragon"); break;
+                case "WOnsiteprog": sb.Append("WOnsiteprog"); break;
+                case "Migration": sb.Append("M"); break;
+                case "USMT Store": sb.Append("S"); break;
+                case "App Installers": sb.Append("7"); break;
+            }
+            sb.Append(" q");
+
+            //await RunCommandPrompt(command, sb.ToString());
+            //RunProgram("mig.bat", "");
+        }
+
+        public static void SendCMDInput(string input)
+        {
+            CMDprocess.StandardInput.WriteLine(input);
+        }
+
+        public static async Task RunCommandPrompt(string name, string input = null)
+        {
+            if (input == null)
+                input = "No command provided";
+
+            await Task.Run(() =>
+            {
+                //CMDworkdir = testcmd;
+                //CMDapp = testfile;
+
+                Log("Running cmd process [" + CMDapp + "] with command [" + input + "] ...");
+
+                try
+                {
+                    CMDprocess = CreateCMDProcess();
+                    StartCMDProcess(CMDprocess);
+
+                    //SendCMDInput("pushd " + testcmd);
+                    SendCMDInput(CMDapp);
+
+                    if (input != "No command provided")
+                        SendCMDInput(input);
+
+                    CMDprocess.BeginOutputReadLine();
+                    CMDprocess.BeginErrorReadLine();
+
+                    if (!CMDprocess.HasExited)
+                        SendCMDInput("exit");
+
+                    WaitForExitAsync(CMDprocess, 120000);
+                }
+                catch (Exception ex) { Log("Error running process: \n\n" + ex.Message); }
+            });
+        }
+        private static Process CreateCMDProcess()
+        {
+            Process p = new Process();
+            exetime = new Stopwatch();
+            CmdRunning = false;
+            CmdID = 0;
+
+            try
+            {
+                p.StartInfo = new ProcessStartInfo()
+                {
+                    //WorkingDirectory = CMDworkdir,
+                    FileName = @"cmd.exe",
+                    Verb = "runas",
+                    UseShellExecute = false,
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    CreateNoWindow = true,
+                };
+
+                p.EnableRaisingEvents = true;
+                p.OutputDataReceived += CMD_OutputDataReceived;
+                p.ErrorDataReceived += CMD_ErrorDataReceived;
+                p.Exited += CMD_FinishProcess;
+            }
+            catch (Exception ex) { Log("Error creating process. \n\n" + ex.Message); }
+
+            return p;
+        }
+
+        private static Task<bool> WaitForExitAsync(Process process, int timeout)
+        {
+            return Task.Run(() => process.WaitForExit(timeout));
+        }
+
+        private static void CMD_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (!(sender is Process) || string.IsNullOrEmpty(e.Data))
+                return;
+
+            try
+            {
+                string data = e.Data;
+                data.Trim();
+                Log(data);
+            }
+            catch (Exception ex) { Log("Error while displaying output data: \n\n" + ex.Message); }
+        }
+
+        private static void CMD_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (!(sender is Process) || string.IsNullOrEmpty(e.Data))
+                return;
+
+            try
+            {
+                string data = e.Data;
+                data.Trim();
+                Log(data);
+            }
+            catch (Exception ex) { Log("Error while displaying error data: \n\n" + ex.Message); }
+        }
+
+        private static void CMD_FinishProcess(object sender, EventArgs e)
+        {
+            if (!(sender is Process) || !(sender as Process).HasExited)
+                return;
+
+            try
+            {
+                exetime.Stop();
+                CmdRunning = false;
+                UpdateWaitingBar();
+                if (exetime.ElapsedMilliseconds >= 120000)
+                    Log("\n\nProcess exited (Id: " + CmdID.ToString() + "). The process has timed-out.");
+                else
+                    Log("\n\nProcess finished (Id: " + CmdID.ToString() + "). Elasped time: " + Converter.ConvertUpTime(exetime.Elapsed));
+
+                CmdID = 0;
+            }
+            catch (Exception ex) { Log("Error exiting event: \n\n" + ex.Message); }
+        }
+
+ 
+
+        private static int StartCMDProcess(Process p)
+        {
+            try
+            {
+                int IDnum = 0;
+                bool Running = p.Start();
+
+                if (Running)
+                {
+                    IDnum = p.Id;
+                    RunningProcessIDs.Add(IDnum);
+                    Log($"Process started successfully.");
+                    Log($"ID added to list of running applications (Id: {IDnum}).");
+                }
+                else
+                    Log("Error: Process failed to start.");
+
+                return IDnum;
+            }
+            catch (Exception ex) { Log("Error starting process: \n\n" + ex.Message); }
+
+            return 0;
+        }
+
+        private static void AddRunningProcessNumToList(int num)
+        {
+            try
+            {
+                if (RunningProcessIDs.Contains(num) != true)
+                {
+                    RunningProcessIDs.Add(num);
+                    Log($"ID added to list of running applications (Id: {num}).");
+                }
+                else
+                    Log($"Error: List of running applications already contains ID (Id: {num}).");
+            }
+            catch (Exception e) { Log($"Error: Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+        private static void UpdateWaitingBar()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex) { Log("Error invoking form label: \n\n" + ex.Message); }
+        }
+
+        public static bool AbortCMDprocess()
+        {
+            if (CMDprocess != null)
+                CMDprocess.Kill();
+
+            if (!CMDprocess.HasExited)
+                return false;
+
+            return true;
+        }
+
+        public static bool DisposeCMDprocess()
+        {
+            if (CMDprocess != null)
+                CMDprocess.Dispose();
+            else if (!CMDprocess.HasExited)
+                return false;
+
+            return true;
+        }
+
+        #endregion CMD.EXE Command Processor
     }
 }

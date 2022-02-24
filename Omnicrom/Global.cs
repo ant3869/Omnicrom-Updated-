@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -82,6 +83,7 @@ namespace Omnicrom
         // Lists
         public static readonly string[] ExcludeStrings = { "Public", "Administrator", "Default", "Default User", "All Users", "DevToolsUser", "DefaultUser", "DefaultUser0", "TEMP", "TEMP0" };
         public static readonly string[] ElevatedStrings = { "SA-", "AD-", "DA-", "sa-", "ad-", "da-" };
+        public static List<int> RunningProcessIDs { get; set; }
 
         // Forms
         public static MainForm mainform { get; set; }
@@ -111,7 +113,7 @@ namespace Omnicrom
         public static Stopwatch IdleTimer { get; set; }
 
         // Integers
-       public readonly static long USED_LIMIT = 140000000000;
+        public readonly static long USED_LIMIT = 140000000000;
 
         public static RadButtonTextBox NaviTextBox { get; set; }
         public static WebBrowser Browser { get; set; }
@@ -122,12 +124,15 @@ namespace Omnicrom
         public static LogicalDiskObject UnknownDisk;
         public static DeviceObject LocalMachine;
 
-        // Data Types
+        // Booleons
         public static bool RemovableDriveFound { get; set; }
         public static bool RemovableBitlocked { get; set; }
         public static bool SoundOn { get; set; }
         public static bool ShowElevated { get; set; }
         public static bool DiagResult { get; set; }
+
+        // Integers
+        public static int StopLockID { get; set; }
 
         #endregion Variables
     }

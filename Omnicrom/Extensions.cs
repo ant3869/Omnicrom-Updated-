@@ -66,9 +66,11 @@ namespace Omnicrom
 
                 //KeyWordColorChanger(box, text);
 
-                if (text.Contains("error") || text.Contains("fail") || text.Contains("unable"))
+                var check = text.ToLower();
+
+                if (check.Contains("error") || check.Contains("fail") || check.Contains("unable"))
                     color = Color.IndianRed;
-                else if (text.Contains("success") || text.Contains("complete"))
+                else if (check.Contains("success") || check.Contains("complete"))
                     color = Color.LightSeaGreen;
 
                 box.SelectionColor = color;
