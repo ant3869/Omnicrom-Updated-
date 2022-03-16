@@ -83,6 +83,16 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_system_run_icon_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions system run icon icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap application_add {
             get {
                 object obj = ResourceManager.GetObject("application_add", resourceCulture);
@@ -156,6 +166,26 @@ namespace Omnicrom.Properties {
         internal static System.Drawing.Bitmap Apps_kthesaurus_icon_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("Apps kthesaurus icon icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Apps_preferences_web_browser_cache_icon_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Apps preferences web browser cache icon icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Apps_system_software_update_icon_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Apps system software update icon icon (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -242,6 +272,26 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap control_panel {
+            get {
+                object obj = ResourceManager.GetObject("control_panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ControlPanel_32 {
+            get {
+                object obj = ResourceManager.GetObject("ControlPanel_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Copy__Help_icon_icon {
             get {
                 object obj = ResourceManager.GetObject("Copy, Help icon icon", resourceCulture);
@@ -261,9 +311,39 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap database_access {
+            get {
+                object obj = ResourceManager.GetObject("database_access", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database_cleanup {
+            get {
+                object obj = ResourceManager.GetObject("database_cleanup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Done_icon_icon {
             get {
                 object obj = ResourceManager.GetObject("Done icon icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Drag_dragon_2 {
+            get {
+                object obj = ResourceManager.GetObject("Drag-dragon_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -370,9 +450,69 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Flag_Green {
+            get {
+                object obj = ResourceManager.GetObject("Flag_Green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_find {
+            get {
+                object obj = ResourceManager.GetObject("folder_find", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_go {
+            get {
+                object obj = ResourceManager.GetObject("folder_go", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_go__2_ {
+            get {
+                object obj = ResourceManager.GetObject("folder_go (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_go1 {
+            get {
+                object obj = ResourceManager.GetObject("folder_go1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_user {
             get {
                 object obj = ResourceManager.GetObject("folder_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forklift {
+            get {
+                object obj = ResourceManager.GetObject("forklift", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +533,16 @@ namespace Omnicrom.Properties {
         internal static System.Drawing.Bitmap gnome_edit_find_icon_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("gnome,edit,find icon icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap greenflag_32 {
+            get {
+                object obj = ResourceManager.GetObject("greenflag_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,6 +603,26 @@ namespace Omnicrom.Properties {
         internal static System.Drawing.Bitmap information {
             get {
                 object obj = ResourceManager.GetObject("information", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Junior_Icon_122 {
+            get {
+                object obj = ResourceManager.GetObject("Junior Icon 122", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kindpng_2983424 {
+            get {
+                object obj = ResourceManager.GetObject("kindpng_2983424", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -538,6 +708,16 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap monitor__utility__system_icon_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("monitor, utility, system icon icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap network_folder {
             get {
                 object obj = ResourceManager.GetObject("network_folder", resourceCulture);
@@ -561,6 +741,26 @@ namespace Omnicrom.Properties {
         internal static System.Drawing.Bitmap NexcoLogoWreath1 {
             get {
                 object obj = ResourceManager.GetObject("NexcoLogoWreath1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Office365_100x70 {
+            get {
+                object obj = ResourceManager.GetObject("Office365_100x70", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ping_256 {
+            get {
+                object obj = ResourceManager.GetObject("ping_256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -628,9 +828,39 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__6_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap poweroff_icon_icon {
             get {
                 object obj = ResourceManager.GetObject("poweroff icon icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preferences_desktop {
+            get {
+                object obj = ResourceManager.GetObject("preferences-desktop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preferences_web_browser_shortcuts___Copy {
+            get {
+                object obj = ResourceManager.GetObject("preferences-web-browser-shortcuts - Copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -648,9 +878,29 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap radar__detect_icon_icon {
+            get {
+                object obj = ResourceManager.GetObject("radar, detect icon icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap restart_icon_icon {
             get {
                 object obj = ResourceManager.GetObject("restart icon icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roadworks {
+            get {
+                object obj = ResourceManager.GetObject("roadworks", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -671,6 +921,26 @@ namespace Omnicrom.Properties {
         internal static System.Drawing.Bitmap setting_tools {
             get {
                 object obj = ResourceManager.GetObject("setting_tools", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shortcuts {
+            get {
+                object obj = ResourceManager.GetObject("shortcuts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap speedometer {
+            get {
+                object obj = ResourceManager.GetObject("speedometer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -748,6 +1018,16 @@ namespace Omnicrom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap update_contact_info {
+            get {
+                object obj = ResourceManager.GetObject("update_contact_info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap voice__sound__speaker_icon_icon {
             get {
                 object obj = ResourceManager.GetObject("voice, sound, speaker icon icon", resourceCulture);
@@ -781,6 +1061,16 @@ namespace Omnicrom.Properties {
         internal static System.IO.UnmanagedMemoryStream Warn1 {
             get {
                 return ResourceManager.GetStream("Warn1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap world {
+            get {
+                object obj = ResourceManager.GetObject("world", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

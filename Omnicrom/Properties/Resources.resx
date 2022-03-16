@@ -121,6 +121,9 @@
   <data name="terminal_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\terminal_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="world" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\world.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Beep1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Beep1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -130,20 +133,35 @@
   <data name="unlock_34x37" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unlock_34x37.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CheckMark_small_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CheckMark_small_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="favicon.img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon.img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="folder_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ToTop_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToTop_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Drag-dragon_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Drag-dragon_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngegg (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg (11).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ControlPanel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ControlPanel_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hdd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hdd_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warn1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="LoadScriptError" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadScriptError.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -154,14 +172,20 @@
   <data name="hibernate icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hibernate icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Links_tiny_normal (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Links_tiny_normal (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="monitor, utility, system icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\monitor, utility, system icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="voice, sound, speaker icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice, sound, speaker icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="application_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="warn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="roadworks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roadworks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clipboard icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipboard icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +223,12 @@
   <data name="gnome,edit,find icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gnome,edit,find icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="forklift" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forklift.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngwing.com (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngwing.com (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="export icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,11 +241,11 @@
   <data name="LoadScript" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadScript.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="setting_tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting_tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="health" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="database_cleanup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\database_cleanup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="system_monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\system_monitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,8 +253,14 @@
   <data name="warn_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warn_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Links_tiny_normal (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Links_tiny_normal (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Office365_100x70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Office365_100x70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preferences-desktop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preferences-desktop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Apps kthesaurus icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Apps kthesaurus icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="poweroff icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\poweroff icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,11 +268,14 @@
   <data name="AppLog_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AppLog_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Warn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Warn1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="warn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="speedometer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\speedometer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,14 +283,20 @@
   <data name="Done icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Done icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="broom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\broom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Links_tiny_normal (2)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Links_tiny_normal (2)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mig_normal_small (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mig_normal_small (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Apps system software update icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Apps system software update icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="books_stack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\books_stack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_go (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_go (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Top icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Top icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,14 +304,20 @@
   <data name="draw_dodge_burn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\draw_dodge_burn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Apps kthesaurus icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Apps kthesaurus icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="monitor, utility, system icon icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\monitor, utility, system icon icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kindpng_2983424" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kindpng_2983424.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Countdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Countdown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NexcoLogoWreath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NexcoLogoWreath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngegg (12)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg (12).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +331,11 @@
   <data name="Actions document decrypt icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions document decrypt icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Copy, Help icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Copy, Help icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="folder_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preferences-web-browser-shortcuts - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preferences-web-browser-shortcuts - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngegg (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,11 +343,29 @@
   <data name="ToolBox_normal_smll (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ToolBox_normal_smll (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NexcoLogoWreath" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NexcoLogoWreath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shortcuts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shortcuts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="voice, sound, speaker icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\voice, sound, speaker icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Apps preferences web browser cache icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Apps preferences web browser cache icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_go1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_go1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flag_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flag_Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bullet, Valid icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bullet, Valid icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="radar, detect icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\radar, detect icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Junior Icon 122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Junior Icon 122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Error icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blank_report" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blank_report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,14 +382,23 @@
   <data name="Applications_small_normal (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Applications_small_normal (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Actions system run icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Actions system run icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="greenflag_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\greenflag_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="restart icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restart icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Links_tiny_normal (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Links_tiny_normal (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="setting_tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Drive, Harddisk, Orange, Usb icon icon (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Drive, Harddisk, Orange, Usb icon icon (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="control_panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\control_panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Quit icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Quit icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,16 +406,22 @@
   <data name="application_view_icons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application_view_icons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Error icon icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Error icon icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Copy, Help icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copy, Help icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="broom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\broom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit_31x31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit_31x31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bullet, Valid icon icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bullet, Valid icon icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="database_access" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\database_access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CheckMark_small_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CheckMark_small_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ping_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ping_256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update_contact_info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update_contact_info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

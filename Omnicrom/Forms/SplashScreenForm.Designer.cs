@@ -133,7 +133,7 @@
             this.radPictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.radPictureBox2.ForeColor = System.Drawing.Color.Transparent;
             this.radPictureBox2.Image = global::Omnicrom.Properties.Resources.NexcoLogoWreath;
-            this.radPictureBox2.Location = new System.Drawing.Point(622, 180);
+            this.radPictureBox2.Location = new System.Drawing.Point(622, 186);
             this.radPictureBox2.Name = "radPictureBox2";
             this.radPictureBox2.Size = new System.Drawing.Size(68, 65);
             this.radPictureBox2.TabIndex = 5;
@@ -177,7 +177,7 @@
             this.radLabel2.AutoSize = false;
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.ForeColor = System.Drawing.Color.Red;
-            this.radLabel2.Location = new System.Drawing.Point(136, 156);
+            this.radLabel2.Location = new System.Drawing.Point(136, 143);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(464, 89);
             this.radLabel2.TabIndex = 8;
@@ -190,7 +190,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Omnicrom.Properties.Resources.warn;
-            this.pictureBox2.Location = new System.Drawing.Point(318, 82);
+            this.pictureBox2.Location = new System.Drawing.Point(318, 69);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -204,7 +204,7 @@
             this.radLabel3.EnableKeyMap = true;
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel3.ForeColor = System.Drawing.Color.Yellow;
-            this.radLabel3.Location = new System.Drawing.Point(270, 120);
+            this.radLabel3.Location = new System.Drawing.Point(270, 107);
             this.radLabel3.Margin = new System.Windows.Forms.Padding(0);
             this.radLabel3.Name = "radLabel3";
             // 
@@ -229,7 +229,7 @@
             // 
             this.Label_nexco.Font = new System.Drawing.Font("Sitka Banner", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_nexco.ForeColor = System.Drawing.Color.BlueViolet;
-            this.Label_nexco.Location = new System.Drawing.Point(613, 242);
+            this.Label_nexco.Location = new System.Drawing.Point(613, 248);
             this.Label_nexco.Name = "Label_nexco";
             // 
             // 
@@ -248,7 +248,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Omnicrom.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(740, 288);
+            this.ClientSize = new System.Drawing.Size(741, 285);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.radLabel3);
@@ -261,9 +261,9 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(780, 380);
+            this.MaximumSize = new System.Drawing.Size(741, 285);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(740, 280);
+            this.MinimumSize = new System.Drawing.Size(741, 285);
             this.Name = "SplashScreenForm";
             // 
             // 

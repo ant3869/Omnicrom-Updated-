@@ -31,7 +31,6 @@
             this.office2019DarkTheme1 = new Telerik.WinControls.Themes.Office2019DarkTheme();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.office2013DarkTheme1 = new Telerik.WinControls.Themes.Office2013DarkTheme();
-            this.fluentDarkTheme1 = new Telerik.WinControls.Themes.FluentDarkTheme();
             this.crystalDarkTheme1 = new Telerik.WinControls.Themes.CrystalDarkTheme();
             this.Label_Dialog_Message = new Telerik.WinControls.UI.RadLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -155,7 +154,6 @@
         private Telerik.WinControls.Themes.Office2019DarkTheme office2019DarkTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
         private Telerik.WinControls.Themes.Office2013DarkTheme office2013DarkTheme1;
-        private Telerik.WinControls.Themes.FluentDarkTheme fluentDarkTheme1;
         private Telerik.WinControls.Themes.CrystalDarkTheme crystalDarkTheme1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Telerik.WinControls.UI.RadLabel Label_Dialog_Message;

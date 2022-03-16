@@ -2,11 +2,14 @@
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -151,43 +154,97 @@ namespace Omnicrom
                 if (drivename != null && drivename.Length > 0)
                     name = drivename;
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
 
             return name;
         }
+
 
         public static void LoadRemovableDisk()
         {
             RemovableDriveFound = false;
             RemovableBitlocked = false;
 
-            DriveInfo[] alldrives = DriveInfo.GetDrives();
-
-            foreach (var drive in alldrives)
+            try
             {
-                if (drive.IsReady && drive.DriveType == DriveType.Removable)
-                {
-                    if (Directory.Exists(drive.Name + "Users"))
-                    {
-                        Removable = new LogicalDiskObject(drive.Name, drive.DriveType);
-                        RemovableDriveFound = true;
+                DriveInfo[] alldrives = DriveInfo.GetDrives();
 
-                        break;
-                    }  
+                foreach (var drive in alldrives)
+                {
+                    if (drive.IsReady && drive.DriveType == DriveType.Removable)
+                    {
+                        SetDirAccess(drive.Name);
+
+                        if (Directory.Exists(drive.Name + "Users"))
+                        {
+                            //bool locked = IsFileLocked(Path.Combine(drive.Name, "Users"));
+
+                            Removable = new LogicalDiskObject(drive.Name, drive.DriveType);
+                            RemovableDriveFound = true;
+
+                            break;
+                        }
+                    }
                 }
             }
-        }
-        public static Label Rname;
-        public static Label Rsize;
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
 
+            //GetRemovableDrivesTEST();
+        }
+
+        public static void GetRemovableDrivesTEST()
+        {
+            try
+            {
+                ManagementScope ms = new ManagementScope();
+                ObjectQuery oq = new ObjectQuery("SELECT DeviceID, VolumeName FROM Win32_LogicalDisk WHERE DriveType=2");
+                ManagementObjectSearcher mos = new ManagementObjectSearcher(ms, oq);
+                ManagementObjectCollection moc = mos.Get();
+
+                foreach (ManagementObject mo in moc)
+                {
+                    string path = (System.IO.Path.Combine(mo["DeviceID"].ToString(), " "));
+                    DirectoryInfo newDI = new DirectoryInfo(path);
+                    newDI.Refresh();
+
+                    SetDirAccess(path);
+                    FileInfo[] files = newDI.GetFiles();
+                    FileSystemInfo[] info = newDI.GetFileSystemInfos();
+                    //Now Access/Show/Return details information from "files" and "info" objects
+
+                    LoadRemovableDisk();
+                }
+            }
+            catch (Exception ex) { Log($"Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        public static void SetDirAccess(string filePath)
+        {
+            WindowsIdentity identify = WindowsIdentity.GetCurrent();
+            string user = identify.Name;
+
+            try { Utility.NullifyUAC(); }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
+            try
+            {
+                FileInfo fi = new FileInfo(filePath);
+                System.Security.AccessControl.FileSecurity fileSecurity = fi.GetAccessControl();
+                fileSecurity.AddAccessRule(new FileSystemAccessRule($"{user}", FileSystemRights.FullControl, AccessControlType.Allow));
+                fileSecurity.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                fi.SetAccessControl(fileSecurity);
+            }
+            catch (Exception ex) { Log($"Exception {ex.Message} Trace {ex.StackTrace}"); }     
+        }
 
         // Physical Disk Getters
-        public static void CheckRemovableSatus()
+        public static async void CheckRemovableSatus()
         {
             if (RemovableDriveFound)
                 return;
 
-            RemovableDriveFound = GetRemovableStatus();
+            var statustask = await GetRemovableStatusAsync();
+            RemovableDriveFound = statustask;
 
             if (RemovableDriveFound && DSK_Counter_Removable == null)
                 LoadRemovableCounters();
@@ -195,23 +252,40 @@ namespace Omnicrom
                 DSK_Counter_Removable = null;
         }
 
-        private static bool GetRemovableStatus()
+        private static async Task<bool> GetRemovableStatusAsync()
         {
+            try{ var result = Utility.NullifyUAC(); }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
             DriveInfo[] drives = DriveInfo.GetDrives();
 
             foreach (var drive in drives)
             {
-                RemovableBitlocked = GetBitlockerStatus(drive.Name);
-
-                if (drive.IsReady && drive.DriveType == DriveType.Removable && !RemovableBitlocked)
+                try
                 {
-                    if (Directory.Exists(drive.Name + "Users"))
-                    {
-                        LoadRemovableDisk();
+                    RemovableBitlocked = GetBitlockerStatus(drive.Name);
 
-                        return true;
+                    //if (RemovableBitlocked)
+                    //{
+                    //    var bitunlockertask = Task.Run(async () => await RunBitunlocker());
+                    //    bitunlockertask.Wait();
+                    //}
+                }
+                catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
+                try
+                {
+                    if (drive.IsReady && drive.DriveType == DriveType.Removable && !RemovableBitlocked)
+                    {
+                        if (Directory.Exists(drive.Name + "Users"))
+                        {
+                            LoadRemovableDisk();
+                            //GetRemovableDrivesTEST();
+                            return true;
+                        }
                     }
                 }
+                catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
             }
 
             return false;
@@ -221,9 +295,6 @@ namespace Omnicrom
         public static void InitalizeRemovableEvents()
         {
             UsbEventWatcher usbEventWatcher = new UsbEventWatcher(true, false);
-
-            //usbEventWatcher.UsbDeviceRemoved += (_, device) => Log("Removed: " + device);
-            //usbEventWatcher.UsbDeviceAdded += (_, device) => Log("Added: " + device);
 
             usbEventWatcher.UsbDriveEjected += (_, path) =>
             {
@@ -240,20 +311,6 @@ namespace Omnicrom
                 Log("Mounted: " + path);
 
                 CheckRemovableSatus();
-
-                //if (!RemovableDriveFound)
-                //    return;
-                //else
-                //{
-                //    if (Directory.Exists(Path.Combine(path, "Users")))
-                //        LoadRemovableDisk();
-
-                //    //foreach (string entry in Directory.GetFileSystemEntries(path))
-                //    //{
-                //    //    if (entry.Contains("Users"))
-                //    //        LoadRemovableDisk();
-                //    //}
-                //}
             };
 
             usbEventWatcher.Start();
@@ -401,6 +458,37 @@ namespace Omnicrom
             return attributes;
         }
 
+        public static async Task RunBitunlocker()
+        {
+            try
+            {
+                await Task.Run(() =>
+                {
+                    var pro = new Process();
+ 
+                    pro.StartInfo = new ProcessStartInfo()
+                    {
+                        FileName = "powershell.exe",
+                        Arguments = $"-NoProfile -ExecutionPolicy ByPass -File \"{apppath_UnlockDrive}\"",
+                        Verb = "runas",
+                        UseShellExecute = false,
+                        RedirectStandardInput = true,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true,
+                    };
+
+                    pro.EnableRaisingEvents = true;
+                    pro.OutputDataReceived += new DataReceivedEventHandler(CMD_OutputDataReceived);
+                    pro.ErrorDataReceived += new DataReceivedEventHandler(CMD_ErrorDataReceived);
+                    pro.Exited += new EventHandler(RemoveNumExitEvent);
+
+                    StartCMDProcess(pro);
+                });
+            }
+            catch (Exception ex) { Log($"Error opening Unlock: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
 
         #endregion Disk Information
 
@@ -422,7 +510,8 @@ namespace Omnicrom
                 result = "Local disk storage is full.";
             else if (LocalDrive.UsedSpacePercent >= 90)
                 result = "Local disk space used is above 90%.";
-            else if (dskidle >= 80)
+
+            if (dskidle >= 80)
             {
                 if (IdleTimer.IsRunning)
                 {
@@ -595,16 +684,20 @@ namespace Omnicrom
             string LocalInstance = LocalDrive.InstanceText;        
             pcounters = new List<PerformanceCounter>();
 
-            CPU_Counter = new PerformanceCounter("Processor", "% Processor Time", "_Total"); pcounters.Add(CPU_Counter);
-            RAM_Counter = new PerformanceCounter("Memory", "% Committed Bytes In Use", null); pcounters.Add(RAM_Counter);
-            DSKAVG_Counter = new PerformanceCounter("PhysicalDisk", "% Disk Time", "_Total"); pcounters.Add(DSKAVG_Counter);
-            IDLEAVG_Counter = new PerformanceCounter("PhysicalDisk", "% Idle Time", "_Total"); pcounters.Add(IDLEAVG_Counter);
-            PGE_Counter = new PerformanceCounter("Paging File", "% Usage", "_Total"); pcounters.Add(PGE_Counter);
+            try
+            {
+                CPU_Counter = new PerformanceCounter("Processor", "% Processor Time", "_Total"); pcounters.Add(CPU_Counter);
+                RAM_Counter = new PerformanceCounter("Memory", "% Committed Bytes In Use", null); pcounters.Add(RAM_Counter);
+                DSKAVG_Counter = new PerformanceCounter("PhysicalDisk", "% Disk Time", "_Total"); pcounters.Add(DSKAVG_Counter);
+                IDLEAVG_Counter = new PerformanceCounter("PhysicalDisk", "% Idle Time", "_Total"); pcounters.Add(IDLEAVG_Counter);
+                PGE_Counter = new PerformanceCounter("Paging File", "% Usage", "_Total"); pcounters.Add(PGE_Counter);
 
-            DSK_Counter_Local = new PerformanceCounter("PhysicalDisk", "% Disk Time", LocalInstance); pcounters.Add(DSK_Counter_Local);
-            IDLE_Counter_Local = new PerformanceCounter("PhysicalDisk", "% Idle Time", LocalInstance); pcounters.Add(IDLE_Counter_Local);
-            DSKR_Counter_Local = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", LocalInstance); pcounters.Add(DSKR_Counter_Local);
-            DSKW_Counter_Local = new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", LocalInstance); pcounters.Add(DSKW_Counter_Local);
+                DSK_Counter_Local = new PerformanceCounter("PhysicalDisk", "% Disk Time", LocalInstance); pcounters.Add(DSK_Counter_Local);
+                IDLE_Counter_Local = new PerformanceCounter("PhysicalDisk", "% Idle Time", LocalInstance); pcounters.Add(IDLE_Counter_Local);
+                DSKR_Counter_Local = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", LocalInstance); pcounters.Add(DSKR_Counter_Local);
+                DSKW_Counter_Local = new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", LocalInstance); pcounters.Add(DSKW_Counter_Local);
+            }
+            catch (Exception ex) { Log($"Error Loading performance counters: Exception {ex.Message} Trace {ex.StackTrace}"); }
 
             if (RemovableDriveFound)
                 LoadRemovableCounters();
@@ -613,11 +706,45 @@ namespace Omnicrom
         public static void LoadRemovableCounters()
         {
             string RemovableInstance = Removable.InstanceText;
+            DSK_Counter_Removable = null;
+            IDLE_Counter_Removable = null;
+            DSKR_Counter_Removable = null;
+            DSKW_Counter_Removable = null;
 
-            DSK_Counter_Removable = new PerformanceCounter("PhysicalDisk", "% Disk Time", RemovableInstance); pcounters.Add(DSK_Counter_Removable);
-            IDLE_Counter_Removable = new PerformanceCounter("PhysicalDisk", "% Idle Time", RemovableInstance); pcounters.Add(IDLE_Counter_Removable);
-            DSKR_Counter_Removable = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", RemovableInstance); pcounters.Add(DSKR_Counter_Removable);
-            DSKW_Counter_Removable = new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", RemovableInstance); pcounters.Add(DSKW_Counter_Removable);
+            try
+            {
+                var DSK_Counter = new PerformanceCounter("PhysicalDisk", "% Disk Time", RemovableInstance);
+                var IDLE_Counter = new PerformanceCounter("PhysicalDisk", "% Idle Time", RemovableInstance);
+                var DSKR_Counter = new PerformanceCounter("PhysicalDisk", "Disk Read Bytes/sec", RemovableInstance);
+                var DSKW_Counter = new PerformanceCounter("PhysicalDisk", "Disk Write Bytes/sec", RemovableInstance);
+
+                if (DSK_Counter != null)
+                    DSK_Counter_Removable = DSK_Counter;
+
+                if (IDLE_Counter != null)
+                    IDLE_Counter_Removable = IDLE_Counter;
+
+                if (DSKR_Counter != null)
+                    DSKR_Counter_Removable = DSKR_Counter;
+
+                if (DSKW_Counter != null)
+                    DSKW_Counter_Removable = DSKW_Counter;
+            }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+            finally
+            {
+                if (DSK_Counter_Removable != null)
+                    pcounters.Add(DSK_Counter_Removable);
+
+                if (IDLE_Counter_Removable != null)
+                    pcounters.Add(IDLE_Counter_Removable);
+
+                if (DSKR_Counter_Removable != null)
+                    pcounters.Add(DSKR_Counter_Removable);
+
+                if (DSKW_Counter_Removable != null)
+                    pcounters.Add(DSKW_Counter_Removable);
+            }  
         }
 
         public static void DisposePerformanceCounters()
@@ -720,11 +847,12 @@ namespace Omnicrom
         /// Name of instance to parse disk use for.
         /// </param>
         /// <returns>Returns an interger.</returns>
-        public static int GetDiskUse(string drivename)
+        public static int GetDiskUse(PerformanceCounter myCounter)
         {
-            var iname = GetDriveInstanceNumberText(drivename);
-            PerformanceCounter myCounter = new PerformanceCounter("PhysicalDisk", "% Disk Time", iname);
-            float result = myCounter.NextValue();
+            float result = 0;
+
+            try { result = myCounter.NextValue(); }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }       
             
             return GetCorrectedProgressValue((int)result);
         }
@@ -736,13 +864,14 @@ namespace Omnicrom
         /// Name of instance to parse disk idle time for.
         /// </param>
         /// <returns>Returns an interger.</returns>
-        public static int GetDiskIdlePercentage(string drivename)
+        public static int GetDiskIdlePercentage(PerformanceCounter myCounter)
         {
-            var iname = GetDriveInstanceNumberText(drivename);
-            PerformanceCounter myCounter = new PerformanceCounter("PhysicalDisk", "% Idle Time", iname);
-            float result = myCounter.NextValue();
+            float result = 0;
 
-            return GetCorrectedProgressValue(result);
+            try { result = myCounter.NextValue(); }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
+            return GetCorrectedProgressValue((int)result);
         }
 
         /// <summary>
@@ -788,14 +917,17 @@ namespace Omnicrom
         /// <returns>Returns an interger.</returns>
         public static int GetCorrectedProgressValue(float dvalue)
         {
-            int value = (int)dvalue;
+            var value = (int)dvalue;
+            int result = 0;
 
             switch (value)
             {
-                case int _ when (value > 100): return 100;
-                case int _ when (value < 0): return 0;
-                default: return value;
+                case int _ when (value >= 100): result = 100; break;
+                case int _ when (value <= 0): result = 0; break;
+                default: result = value; break;
             }
+
+            return result;
         }
 
 
@@ -814,24 +946,29 @@ namespace Omnicrom
 
         public static bool WriteLog(string message)
         {
-            string datetext = DateTime.Now.ToString("MM-dd-yyyy");
-            string filename = Path.Combine(DesktopDirectory, $"{datetext}_OmniLog.txt");
-
-            if (File.Exists(filename))
+            try
             {
-                using (StreamWriter writer = File.AppendText(filename))
+                var name = $"{DateTime.Now.ToString("MMddyyyy")}_OmniLog.txt";
+                string filename = Path.Combine(MyDocuments, name);
+                OmnicromExternalLogPath = MyDocuments;
+
+                if (File.Exists(filename))
                 {
-                    writer.WriteLine($"{DateTime.Now} : {message}");
+                    using (StreamWriter writer = File.AppendText(filename))
+                    {
+                        writer.WriteLine($"{DateTime.Now} : {message}");
+                    }
+                }
+                else
+                {
+                    using (StreamWriter writer = File.CreateText(filename))
+                    {
+                        writer.WriteLine($"{DateTime.Now} : {message}");
+                    }
                 }
             }
-            else
-            {
-                using (StreamWriter writer = File.CreateText(filename))
-                {
-                    writer.WriteLine($"{DateTime.Now} : {message}");
-                }
-            }
-
+            catch (Exception ex) { Log($"Error at WriteLog: Exception {ex.Message} Trace {ex.StackTrace}"); }
+ 
             return true;
         }
 
@@ -848,10 +985,13 @@ namespace Omnicrom
             return returnValue;
         }
 
-        public static void Find(string text, bool matchCase, RichTextBox rtb)
+        public static void Find(string text, bool matchCase = false, RichTextBox rtb = null)
         {
             try
             {
+                if (rtb == null)
+                    rtb = CurrentLogBox;
+
                 int startPos;
 
                 StringComparison type;
@@ -867,7 +1007,7 @@ namespace Omnicrom
                     //rtb.Focus();      
                 }
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            catch (Exception e) { Log($"Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         public static void CopyTextFromLabel(RadLabel label)
@@ -1015,6 +1155,7 @@ namespace Omnicrom
                 if (!string.IsNullOrWhiteSpace(uName))
                     userSession.Add(uName, sessionId);
             }
+
             return userSession;
         }
 
@@ -1029,11 +1170,9 @@ namespace Omnicrom
                 WTSQuerySessionInformation(server, sessionId, WTS_INFO_CLASS.WTSUserName, out buffer, out count);
                 userName = Marshal.PtrToStringAnsi(buffer).ToUpper().Trim();
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
-            finally
-            {
-                WTSFreeMemory(buffer);
-            }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+            finally { WTSFreeMemory(buffer); }
+
             return userName;
         }
 
@@ -1050,9 +1189,8 @@ namespace Omnicrom
                 foreach (var app in (IKnownFolder)appsFolder)
                 {
                     i++;
-                    // The friendly app name
+
                     string name = app.Name;
-                    // The ParsingName property is the AppUserModelID
                     string appUserModelID = app.ParsingName; // or app.Properties.System.AppUserModel.ID
                                                              // You can even get the Jumbo icon in one shot
                     string ver = app.Properties.System.FileVersion.Value;
@@ -1103,27 +1241,29 @@ namespace Omnicrom
 
         #endregion Windows User Accounts
 
-        //public static bool IsFileLocked(string filepath)
-        //{
-        //    FileInfo file = new FileInfo(filepath);
+        #region File Management
 
-        //    try
-        //    {
-        //        using FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
-        //        stream.Close();
-        //    }
-        //    catch (IOException)
-        //    {
-        //        //the file is unavailable because it is:
-        //        //still being written to
-        //        //or being processed by another thread
-        //        //or does not exist (has already been processed)
-        //        return true;
-        //    }
+        public static bool IsFileLocked(string filepath)
+        {
+            FileInfo file = new FileInfo(filepath);
 
-        //    //file is not locked
-        //    return false;
-        //}
+            try
+            {
+                FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
+                stream.Close();
+            }
+            catch (IOException)
+            {
+                //the file is unavailable because it is:
+                //still being written to
+                //or being processed by another thread
+                //or does not exist (has already been processed)
+                return true;
+            }
+
+            //file is not locked
+            return false;
+        }
 
         public static void KillRunningProcess(string name)
         {
@@ -1239,20 +1379,26 @@ namespace Omnicrom
         /// </summary>
         /// <param name="filepath">The filename to count lines in.</param>
         /// <returns>The number of lines in the file.</returns>
-        //public static async Task<int> CountLinesInFileAsync(string filepath)
-        //{
-        //    int count = 0;
+        public static async Task<int> CountLinesInFileAsync(string filepath)
+        {
+            int count = 0;
 
-        //    await Task.Run(() =>
-        //    {
-        //        using StreamReader r = new StreamReader(filepath);
-        //        string line;
+            await Task.Run(() =>
+            {
+                StreamReader r = new StreamReader(filepath);
+                string line;
 
-        //        while ((line = r.ReadLine()) != null)
-        //            count++;
-        //    });
-        //    return count;
-        //}
+                while ((line = r.ReadLine()) != null)
+                    count++;
+
+                r.Close();
+            });
+            return count;
+        }
+
+        #endregion File Management
+
+        #region System Controls
 
         /// <summary>
         /// Logout of current Windows user profile, after prompting a confirmation diaglog box.
@@ -1260,18 +1406,7 @@ namespace Omnicrom
         /// <returns>Returns void.</returns>
         public static async void LogoutCurrentUser()
         {
-            try
-            {
-                await Task.Run(() => 
-                {
-                    string user = Environment.UserName;
-                    string domain = GetWorkgroupOrDomainName();
-                    IntPtr server = WTSOpenServer(Environment.MachineName); // Local server
-
-                    LogOffUser(user, server);
-                });
-   
-            }
+            try { _ = await Task.Run(() => Process.Start("logout")); }
             catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
         }
 
@@ -1312,27 +1447,13 @@ namespace Omnicrom
         /// The RichTextBox containing the text to parse to notepad.
         /// </param>
         /// <returns>Returns void.</returns>
-        public static void OpenExternalLog(RichTextBox logbox)
+        public static async void OpenExternalLog(RichTextBox logbox)
         {
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            string file = Path.Combine(docPath, "OmnicromLog.txt");
-            string theData = logbox.Text;
-
-            try
+            if (logbox == omnicromlogbox)
             {
-                var process = new Process
-                {
-                    StartInfo = new ProcessStartInfo()
-                    {
-                        UseShellExecute = true,
-                        FileName = file
-                    }
-                };
-
-                File.AppendAllText(Path.Combine(docPath, "OmnicromLog.txt"), theData);
-                process.Start();
+                try { await Task.Run(() => Process.Start(OmnicromExternalLogPath)); }
+                catch (Exception e) { Log($"Error opening omnicrom log: Exception {e.Message} Trace {e.StackTrace}"); }
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
         }
 
         /// <summary>
@@ -1345,32 +1466,60 @@ namespace Omnicrom
             System.Windows.Forms.Application.DoEvents();
         }
 
-        // G:\Work\Resources\ModdedScripts\Batch
-        // G:\Work\Resources\Apps
+        public static async Task RunGpUpdate()
+        {
+            string app = "cmd.exe";
+            string com = "/c GPUPdate/force";
+
+            Log("Running GP Update ...");
+
+            try { await Task.Run(async () => { await RunCommandPrompt($"{app} {com}"); }); }
+            catch (Exception e) { Log($"Error running GPUpate: Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+        public static async void CopyOmnicromToDesktop()
+        {
+            string app = "cmd.exe";
+            string com = $"/c copy {apppath_Omnicrom} {Desktop}";
+
+            try { await Task.Run(async () => { await RunCommandPrompt($"{app} {com}"); }); }
+            catch (Exception e) { Log($"Error running GPUpate: Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+        public static bool GetExecutableRunStatus(string appname)
+        {
+            var result = true;
+
+            try { result = Process.GetProcessesByName(appname).Any(); }
+            catch (Exception e) { Log($"Error getting executable run status: Exception {e.Message} Trace {e.StackTrace}"); }
+
+            return result;
+        }
 
         public static async void StartCaffeineApp()
         {
             try
             {
-                //var num = await RunProgramAsync("caffeine.exe");
-              
+                bool isRunning = GetExecutableRunStatus("caffeine.exe");
+
+                if (isRunning)
+                    return;                   
+
                 await Task.Run(() => 
                 {
                     Process process = new Process();
-                    process.StartInfo.FileName = @"G:\Work\Resources\Apps\caffeine.exe";
+                    process.StartInfo.FileName = apppath_Caffiene;
                     process.Start();
 
                     if (process.Id != 0)
                     {
                         StopLockID = process.Id;
+                        Log($"Stop-Lock started successfully.");
                         AddRunningProcessNumToList(StopLockID);
                     }
                     else
-                        Log($"Stop-Lock ID: {StopLockID}");
-                });
-
-                //if (num != 0)
-                //    StopLockID = num;          
+                        Log($"Stop-Lock failed to start.");
+                });       
             }
             catch (Exception e) { Log($"Error starting Stop-Lock: Exception {e.Message} Trace {e.StackTrace}"); }
         }
@@ -1380,29 +1529,31 @@ namespace Omnicrom
             try
             {
                 var num = await KillProcessByID(StopLockID);
-                StopLockID = num;
 
-                Log($"Stop-Lock ID: {StopLockID}");
+                if (num == 0)
+                    StopLockID = num;
+                else
+                    Log("Failed to stop Stop-Lock process");
             }
             catch (Exception e) { Log($"Error stopping Stop-Lock: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
-        public static async Task StartStopLockAsync()
+        public static async void StartStopLockAsync()
         {
-            try
-            {
-                await RunProgramAsync("mig.bat", "1");
-            }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            try { await Task.Run(() => RunProgramAsync("mig.bat", "1")); }
+            catch (Exception e) { Log($"Error starting Stop-Lock: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
-        public static async Task StartBitlockUnlockerAsync()
+        public static async void StartBitlockUnlockerAsync()
         {
-            try
-            {
-                await RunProgramAsync("mig.bat", "unlock q");
-            }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            //try{ await Task.Run(() => RunProgramAsync("mig.bat", "unlock q"));}
+            //catch (Exception e) { Log($"Error starting BitUnlocker: Exception {e.Message} Trace {e.StackTrace}"); }
+
+            string path = $@"{apppath_Mig}" + " unlock q";
+
+
+            try { await Task.Run(() => Process.Start(path)); }
+            catch (Exception e) { Log($"Error starting BitUnlocker: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         private static async Task<int> KillProcessByID(int id)
@@ -1441,6 +1592,10 @@ namespace Omnicrom
             }
         }
 
+        #endregion System Controls
+
+        #region CMD Command Processor
+
         public static async Task<int> RunProgramAsync(string app, string arguments = "")
         {
             int idnum = 0;
@@ -1458,13 +1613,17 @@ namespace Omnicrom
                     {
                         StartInfo = new ProcessStartInfo()
                         {
-                            WorkingDirectory = @"G:\Work\Resources\Apps\",
+                            WorkingDirectory = ant_app_path,
                             UseShellExecute = false,
                             FileName = app,
                             Arguments = arguments,
                             Verb = "RunAs",
+                            CreateNoWindow = true,
                         }
                     };
+
+                    process.EnableRaisingEvents = true;
+                    process.Exited += new EventHandler(RemoveNumExitEvent);
 
                     idnum = StartCMDProcess(process);
                 });
@@ -1473,8 +1632,6 @@ namespace Omnicrom
 
             return idnum;
         }
-
-        #region CMD Command Processor
 
         // Variables
         private static int CmdID;
@@ -1488,10 +1645,10 @@ namespace Omnicrom
         public static RadWaitingBar CMDProcessWaitingBar;
         public static Label CMDProcessLabel;
 
-        public static async Task MigMachine(string command)
+        public static async void MigMachine(string command)
         {
             StringBuilder sb = new StringBuilder();
-            //sb.Append("mig.bat ");
+    
 
             switch (command)
             {
@@ -1524,64 +1681,89 @@ namespace Omnicrom
                 case "USMT Store": sb.Append("S"); break;
                 case "App Installers": sb.Append("7"); break;
             }
-            sb.Append(" q");
+            //sb.Append(" q");
+            var com = sb.ToString();
 
-            //await RunCommandPrompt(command, sb.ToString());
-            //RunProgram("mig.bat", "");
+            await Task.Run(async () => { await RunCommandPrompt($"{apppath_Mig} {com}"); });
+
+            if (command == "all" || command == "offlinescan" || command == "usmtup")
+                StartLogMonitor(@"C:\USMT\ScanState.log");
+
+            if (command == "offlineload" || command == "usmtdown")
+                StartLogMonitor(@"C:\USMT\LoadState.log");
         }
+
+        public static void StartLogMonitor(string logpath)
+        {
+            if (!File.Exists(logpath))
+            {
+                Log($"Log file {logpath} does not exists");
+                return;
+            }
+
+            try
+            {
+                //var monitor = new MonitorLogFile(logpath, "\r\n");
+                var monitor = new LiveLogViewer(logpath);
+ 
+                //monitor.OnLine += (s, e) =>
+                //{
+                //    if (e.Line != null)
+                //        MigLog(e.Line);
+                //};
+
+                //monitor.Start();
+
+
+            }
+            catch (Exception ex) { Log($"Error starting log monitor: Exception {ex.Message} Trace {ex.StackTrace}"); }           
+        }
+
+
 
         public static void SendCMDInput(string input)
         {
             CMDprocess.StandardInput.WriteLine(input);
         }
 
-        public static async Task RunCommandPrompt(string name, string input = null)
+        public static async Task RunCommandPrompt(string CMDapp, string input = null)
         {
-            if (input == null)
-                input = "No command provided";
-
             await Task.Run(() =>
             {
-                //CMDworkdir = testcmd;
-                //CMDapp = testfile;
-
-                Log("Running cmd process [" + CMDapp + "] with command [" + input + "] ...");
+                Log($"Running cmd process [{CMDapp}] ...");
 
                 try
                 {
                     CMDprocess = CreateCMDProcess();
                     StartCMDProcess(CMDprocess);
 
-                    //SendCMDInput("pushd " + testcmd);
+                    //SendCMDInput("pushd " + $"{ant_app_path}");
                     SendCMDInput(CMDapp);
 
-                    if (input != "No command provided")
+                    if (input != null)
                         SendCMDInput(input);
 
                     CMDprocess.BeginOutputReadLine();
                     CMDprocess.BeginErrorReadLine();
-
-                    if (!CMDprocess.HasExited)
-                        SendCMDInput("exit");
-
                     WaitForExitAsync(CMDprocess, 120000);
                 }
                 catch (Exception ex) { Log("Error running process: \n\n" + ex.Message); }
             });
         }
+
         private static Process CreateCMDProcess()
         {
-            Process p = new Process();
+            Process pro = new Process();
             exetime = new Stopwatch();
             CmdRunning = false;
             CmdID = 0;
 
             try
             {
-                p.StartInfo = new ProcessStartInfo()
+                pro.StartInfo = new ProcessStartInfo()
                 {
-                    //WorkingDirectory = CMDworkdir,
                     FileName = @"cmd.exe",
+                    //Arguments = @"\c ",
                     Verb = "runas",
                     UseShellExecute = false,
                     RedirectStandardInput = true,
@@ -1590,14 +1772,14 @@ namespace Omnicrom
                     CreateNoWindow = true,
                 };
 
-                p.EnableRaisingEvents = true;
-                p.OutputDataReceived += CMD_OutputDataReceived;
-                p.ErrorDataReceived += CMD_ErrorDataReceived;
-                p.Exited += CMD_FinishProcess;
+                pro.EnableRaisingEvents = true;
+                pro.OutputDataReceived += new DataReceivedEventHandler(CMD_OutputDataReceived);
+                pro.ErrorDataReceived += new DataReceivedEventHandler(CMD_ErrorDataReceived);
+                pro.Exited += new EventHandler(RemoveNumExitEvent);
             }
             catch (Exception ex) { Log("Error creating process. \n\n" + ex.Message); }
 
-            return p;
+            return pro;
         }
 
         private static Task<bool> WaitForExitAsync(Process process, int timeout)
@@ -1644,16 +1826,14 @@ namespace Omnicrom
                 CmdRunning = false;
                 UpdateWaitingBar();
                 if (exetime.ElapsedMilliseconds >= 120000)
-                    Log("\n\nProcess exited (Id: " + CmdID.ToString() + "). The process has timed-out.");
+                    Log($"Process {CmdID} exited. The process has timed-out.");
                 else
-                    Log("\n\nProcess finished (Id: " + CmdID.ToString() + "). Elasped time: " + Converter.ConvertUpTime(exetime.Elapsed));
+                    Log($"Process {CmdID} finished. Elasped time: {Converter.ConvertUpTime(exetime.Elapsed)}");
 
                 CmdID = 0;
             }
             catch (Exception ex) { Log("Error exiting event: \n\n" + ex.Message); }
         }
-
- 
 
         private static int StartCMDProcess(Process p)
         {
@@ -1665,9 +1845,8 @@ namespace Omnicrom
                 if (Running)
                 {
                     IDnum = p.Id;
-                    RunningProcessIDs.Add(IDnum);
+                    AddRunningProcessNumToList(IDnum);
                     Log($"Process started successfully.");
-                    Log($"ID added to list of running applications (Id: {IDnum}).");
                 }
                 else
                     Log("Error: Process failed to start.");
@@ -1679,6 +1858,24 @@ namespace Omnicrom
             return 0;
         }
 
+        private static void RemoveNumExitEvent(object sender, EventArgs e)
+        {
+            try
+            {
+                var p = sender as Process;
+                var num = p.Id;
+
+                if (p != null)
+                {
+                    if (p.Id != 0)
+                        RemoveStoppedProcessNumFromList(p.Id);
+                }
+                else
+                    Log($"Error: Exit Event failed.).");
+            }
+            catch (Exception ex) { Log($"Error: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
         private static void AddRunningProcessNumToList(int num)
         {
             try
@@ -1686,13 +1883,30 @@ namespace Omnicrom
                 if (RunningProcessIDs.Contains(num) != true)
                 {
                     RunningProcessIDs.Add(num);
-                    Log($"ID added to list of running applications (Id: {num}).");
+                    //Log($"{num} added to running applications.");
                 }
                 else
-                    Log($"Error: List of running applications already contains ID (Id: {num}).");
+                    Log($"Error: List of running applications already contains {num}.");
             }
             catch (Exception e) { Log($"Error: Exception {e.Message} Trace {e.StackTrace}"); }
         }
+
+        private static void RemoveStoppedProcessNumFromList(int num)
+        {
+            try
+            {
+                if (RunningProcessIDs.Contains(num) == true)
+                {
+                    RunningProcessIDs.Remove(num);
+                    Log($"{num} removed from running applications.");
+                }
+                else
+                    Log($"Error: List of running applications does not contain {num}.");
+            }
+            catch (Exception e) { Log($"Error: Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+
 
         private static void UpdateWaitingBar()
         {
@@ -1722,6 +1936,40 @@ namespace Omnicrom
                 return false;
 
             return true;
+        }
+
+        public static async void StartCMDSessionAsync()
+        {
+            try
+            { 
+                await Task.Run(() => 
+                {
+                    Process pro = new Process();
+                    pro.StartInfo.FileName = @"cmd.exe";
+                    pro.StartInfo.Verb = "RunAs";
+                    pro.EnableRaisingEvents = true;
+                    pro.Exited += new EventHandler(RemoveNumExitEvent);
+                    StartCMDProcess(pro);
+                }); 
+            }
+            catch (Exception e) { Log($"Exception {e.Message} Trace {e.StackTrace}"); }
+        }
+
+        public static async void StartPSSessionAsync()
+        {
+            try
+            {
+                await Task.Run(() =>
+                {
+                    Process pro = new Process();
+                    pro.StartInfo.FileName = @"powershell.exe";
+                    pro.StartInfo.Verb = "RunAs";
+                    pro.EnableRaisingEvents = true;
+                    pro.Exited += new EventHandler(RemoveNumExitEvent);
+                    StartCMDProcess(pro);
+                });
+            }
+            catch (Exception e) { Log($"Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         #endregion CMD.EXE Command Processor

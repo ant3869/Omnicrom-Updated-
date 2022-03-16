@@ -16,6 +16,8 @@ using static Omnicrom.RichTextBoxExtensions;
 using System.Threading.Tasks;
 using Telerik.WinControls.Primitives;
 using Omnicrom.Forms;
+using System.Security.Principal;
+using Microsoft.Win32;
 
 namespace Omnicrom
 {
@@ -30,6 +32,11 @@ namespace Omnicrom
     //});
 
     //return T;
+
+    // Blue Color 0, 122, 204
+    // Gray Color 64, 64, 64
+
+
 
     public partial class MainForm : RadForm
     {
@@ -53,18 +60,22 @@ namespace Omnicrom
                 InitalizeRemovableEvents();
                 LoadSystemInformation();
             }
-            catch (Exception e) { MessageBox.Show(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
-
-            //InitalizeStopLock();     
+            catch (Exception e) { Log($"Error intializing form: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         private void ConnectProxyControls()
         {
             UpdateSplashScreenText("Connecting proxy controls");
 
-            RichTextBoxExtensions.logbox = this.LogBox_Omnicrom;
-            Global.omnicromlogbox = RichTextBoxExtensions.logbox;
-            Global.mainform = this;
+            try
+            {
+                RichTextBoxExtensions.logbox = this.LogBox_Omnicrom;
+                RichTextBoxExtensions.miglogbox = this.RichTextBox_Logs_USMT;
+                Global.omnicromlogbox = RichTextBoxExtensions.logbox;
+                Global.USMTLogBox = RichTextBoxExtensions.miglogbox;
+                Global.mainform = this;
+            }
+            catch (Exception e) { Log($"Error connecting proxy controls: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         private void LoadFormProperties()
@@ -73,42 +84,42 @@ namespace Omnicrom
 
             try
             {
-                //this.FormElement.TitleBar.MaximizeButton.VisualState = "Collapsed";
-                this.FormElement.Size = new System.Drawing.Size(1000, 495); // 900 600
-                //this.StatusStrip_Main.Size = new System.Drawing.Size(992, 20);
+                this.Size = new System.Drawing.Size(1000, 495); // 1000, 495
                 this.FormElement.AutoToolTip = false;
+                SoundOn = false;
             }
-            catch (Exception e) { MessageBox.Show(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            catch (Exception e) { Log($"Error loading form properties: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         private void InitializeFormComponents()
         {
             UpdateSplashScreenText("Loading form components");
 
-            this.Size = new System.Drawing.Size(1000, 495); // 1000, 495
+            try
+            {
+                PageView_Logs.SelectedPage.Name = "ViewPage_Logs_Omnicrom";
+                CurrentLogBox = LogBox_Omnicrom;
+                CurrentLogBox.Name = "Omnicrom_Log";
 
-            PageView_Logs.SelectedPage.Name = "ViewPage_Logs_Omnicrom";
-            CurrentLogBox = LogBox_Omnicrom;
-            CurrentLogBox.Name = "Omnicrom_Log";
-            SoundOn = false;
-
-            OmnicromRunTime = new Stopwatch();
-            IdleTimer = new Stopwatch();
-            RunningProcessIDs = new List<int>();
-            //statustimer = new Timer();
+                OmnicromRunTime = new Stopwatch();
+                IdleTimer = new Stopwatch();
+                RunningProcessIDs = new List<int>();
+            }
+            catch (Exception e) { Log($"Error loading system information: Exception {e.Message} Trace {e.StackTrace}"); }
         }
 
         private void LoadSystemInformation()
         {
             UpdateSplashScreenText("Loading system information");
 
-            //await Task.Run(() =>
-            //{ });
-
-            LoadLocalDiskDetails();
-            LoadRemovableDiskDetails();
-            LoadMachineDetails();
-            LoadPerformanceCounters();      
+            try 
+            {
+                LoadLocalDiskDetails();
+                LoadRemovableDiskDetails();
+                LoadMachineDetails();
+                LoadPerformanceCounters();
+            }
+            catch (Exception e) { Log($"Error loading system information: Exception {e.Message} Trace {e.StackTrace}"); }    
         }
 
         #endregion Initiaization
@@ -118,71 +129,76 @@ namespace Omnicrom
         private void LoadLocalDiskDetails()
         {
             UpdateSplashScreenText("Loading local drive data");
-            LoadLocalDrive();
 
-            Label_Drives_LocalName.Text = LocalDrive.Name;
-            Label_Drives_LocalTotalSpace.Text = LocalDrive.TotalSpaceText;
+            try
+            {
+                LoadLocalDrive();
+
+                Label_Drives_LocalName.Text = LocalDrive.Name;
+                Label_Drives_LocalTotalSpace.Text = LocalDrive.TotalSpaceText;
+            }
+            catch (Exception ex) { Log($"Error loading local disk details: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         private void LoadRemovableDiskDetails()
         {
             UpdateSplashScreenText("Loading removable drive data");
-            LoadRemovableDisk();
-            ShowRemovableDriveGroupBox();
+
+            try
+            {
+                LoadRemovableDisk();
+                ShowRemovableDriveGroupBox();
+            }
+            catch (Exception ex) { Log($"Error loading removable disk details: Exception {ex.Message} Trace {ex.StackTrace}"); }  
         }
 
         private void ShowRemovableDriveGroupBox()
         {
-            //if ((RemovableDriveFound == true && Label_Drives_RemovableName.Text == Removable.Name) || (RemovableDriveFound == false && GroupBox_Drives_Removable.Visible == false))
-            //    return;
-
-            if (!RemovableDriveFound)
-            {   
-                GroupBox_Drives_Removable.Visible = false;
-                PictureBox_Drives_RemovableImage.Visible = false;
-            }
-            else
+            try
             {
-                Label_Drives_RemovableName.Text = Removable.Name;
-                Label_Drives_RemovableTotalSpace.Text = Removable.TotalSpaceText;
-
-                if (GroupBox_Drives_Removable.Visible != true || PictureBox_Drives_RemovableImage.Visible != true)
+                if (!RemovableDriveFound)
                 {
-                    PictureBox_Drives_RemovableImage.Visible = true;
-                    GroupBox_Drives_Removable.Visible = true;
-                    GroupBox_Drives_Removable.Show();
+                    GroupBox_Drives_Removable.Visible = false;
+                    PictureBox_Drives_RemovableImage.Visible = false;
+                }
+                else
+                {
+                    Label_Drives_RemovableName.Text = Removable.Name;
+                    Label_Drives_RemovableTotalSpace.Text = Removable.TotalSpaceText;
+
+                    if (GroupBox_Drives_Removable.Visible != true || PictureBox_Drives_RemovableImage.Visible != true)
+                    {
+                        PictureBox_Drives_RemovableImage.Visible = true;
+                        GroupBox_Drives_Removable.Visible = true;
+                        GroupBox_Drives_Removable.Show();
+                    }
                 }
             }
+            catch (Exception ex) { Log($"Error loading machine details: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         private void LoadMachineDetails()
         {
             UpdateSplashScreenText("Loading local machine data");
-            LoadDeviceObject();
 
-            // Load Machine Details
-            Label_Machine_Name.DataBindings.Add("Text", LocalMachine, "Name");
-            Label_Machine_Tag.DataBindings.Add("Text", LocalMachine, "ServiceTag");
-            Label_Machine_UpTime.DataBindings.Add("Text", LocalMachine, "SystemUpTime");
-            Label_Machine_Model.DataBindings.Add("Text", LocalMachine, "Model");
+            try 
+            {
+                LoadDeviceObject();
+
+                // Load Machine Details
+                Label_Machine_Name.DataBindings.Add("Text", LocalMachine, "Name");
+                Label_Machine_Tag.DataBindings.Add("Text", LocalMachine, "ServiceTag");
+                Label_Machine_UpTime.DataBindings.Add("Text", LocalMachine, "SystemUpTime");
+                Label_Machine_Model.DataBindings.Add("Text", LocalMachine, "Model");
+            }
+            catch (Exception ex) { Log($"Error loading machine details: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (mainform.Width != 1000)
-                mainform.Size = new System.Drawing.Size(1000, 495);
-
-            UpdateSplashScreenText("Finishing up");
-            CheckViewSelection("ViewPage_Logs_Omnicrom");
+            UpdateSplashScreenText("Loading main form objects");
+    
             LoadStartApplications();
-
-            OmnicromRunTime.Start();
-            statustimer.Start();
-            IdleTimer.Start();
-
-            this.BringToFront();
-            this.Focus();    
-            this.TopMost = false;
 
             UpdateSplashScreenText("Finished loading sequence. Starting ...");
             Log("Omnicrom started successfully.");
@@ -190,7 +206,30 @@ namespace Omnicrom
 
         private async void LoadStartApplications()
         {
-            await Task.Run(() => { StartCaffeineApp(); });
+            try 
+            {
+                if (mainform.Width != 1000)
+                    mainform.Size = new System.Drawing.Size(1000, 495);
+
+                CheckViewSelection("ViewPage_Logs_Omnicrom");
+                await Task.Run(() => {  StartCaffeineApp(); });
+
+                OmnicromRunTime.Start();
+                statustimer.Start();
+                IdleTimer.Start();
+
+                USMT_GPUpdateON = true;
+                USMT_PostCleanUpON = true;
+                USMT_FinishedSoundON = true;
+                USMT_PostCompareON = true;
+
+                this.BringToFront();
+                this.Focus();
+                this.TopMost = false;
+
+                StartLogMonitor(OmnicromExternalLogPath);
+            }
+            catch (Exception ex) { Log($"Error starting form applications: Exception {ex.Message} Trace {ex.StackTrace}"); }       
         }
 
         #endregion Load Objects
@@ -207,42 +246,49 @@ namespace Omnicrom
             PictureBox_Status_Error.Hide();
             Color color;
 
-            switch (text)
+            try
             {
-                case "OK":
-                    color = Color.LightGreen;
-                    this.PictureBox_Status_Ok.Show();
-                    break;
-                case "Warning": 
-                    color = Color.Yellow;
-                    this.PictureBox_Status_Warn.Show();
-                    break;
-                case "Error": 
-                    color = Color.Red;
-                    this.PictureBox_Status_Error.Show();
-                    break;
-                default: color = Color.Azure; break;
+                switch (text)
+                {
+                    case "OK":
+                        color = Color.LightGreen;
+                        this.PictureBox_Status_Ok.Show();
+                        this.PictureBox_Status_Ok.BringToFront();
+                        break;
+                    case "Warning":
+                        color = Color.Yellow;
+                        this.PictureBox_Status_Warn.Show();
+                        this.PictureBox_Status_Warn.BringToFront();
+                        break;
+                    case "Error":
+                        color = Color.Red;
+                        this.PictureBox_Status_Error.Show();
+                        this.PictureBox_Status_Error.BringToFront();
+                        break;
+                    default: color = Color.Azure; break;
+                }
+
+                // Set status text
+                Label_Status_Indicator.Text = text;
+
+                // Show status blink effect
+                if (saved != text)
+                    await Task.Run(() => { em.SoftBlink(Label_Status_Indicator, color); });
+
+                // Set status text color
+                Label_Status_Indicator.ForeColor = color;
+                saved = text;
+
+                // Play status related audio wav (if wav not just previous played)
+                if (!played)
+                {
+                    EffectManager.PlaySound(text);
+                    played = true;
+                }
+                else
+                    played = false;
             }
-
-            // Set status text
-            Label_Status_Indicator.Text = text;
-
-            // Show status blink effect
-            if (saved != text)
-                await em.SoftBlink(Label_Status_Indicator, color);
-
-            // Set status text color
-            Label_Status_Indicator.ForeColor = color;
-            saved = text;
-
-            // Play status related audio wav (if wav not just previous played)
-            if (!played)
-            {
-                EffectManager.PlaySound(text);
-                played = true;
-            }
-            else
-                played = false;
+            catch (Exception ex) { Log($"Error at set status: Exception {ex.Message} Trace {ex.StackTrace}"); }       
         }
 
         private void CompareDisk()
@@ -255,7 +301,7 @@ namespace Omnicrom
                 Label_Status_Description.Text = description;
                 SetStatus(indicator);
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            catch (Exception ex) { Log($"Error at compare disk: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         #endregion Update Status
@@ -273,7 +319,7 @@ namespace Omnicrom
 
                 CompareDisk();
             }
-            catch (Exception ex) { Log(string.Format("Exception {0} Trace {1}", ex.Message, ex.StackTrace)); }
+            catch (Exception ex) { Log($"Error at status timer tick: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         private void UpdateLocalMachineInfo()
@@ -295,11 +341,14 @@ namespace Omnicrom
 
                 // Machine UpTime
                 Label_Machine_UpTime.Text = GetSystemUpTime();
-
-                //// Omnicrom RunTime
+                
+                // Omnicrom RunTime
                 Label_Logs_OmnicromRunTime.Text = Converter.ConvertUpTime(OmnicromRunTime.Elapsed);
+
+                // Disk idle timer
+                Label_TEST_IDLETIME.Text = Converter.ConvertUpTime(IdleTimer.Elapsed);
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            catch (Exception ex) { Log($"Error updating machine information: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         private void UpdateLocalDiskInfo()
@@ -307,7 +356,8 @@ namespace Omnicrom
             try
             {
                 // Local Disk (C:)
-                int flocaldsk = (int)DSK_Counter_Local.NextValue();
+                int flocaldsk = GetDiskUse(DSK_Counter_Local);
+                int flocalidle = GetDiskIdlePercentage(IDLE_Counter_Local);
                 long flocalread = (long)DSKR_Counter_Local.NextValue();
                 long flocalwrite = (long)DSKW_Counter_Local.NextValue();
 
@@ -315,11 +365,11 @@ namespace Omnicrom
                 Label_Drives_LocalFreeSpace.Text = $"{LocalDrive.FreeSpaceText} free of";
 
                 ProgressBar_Drives_LocalDiskActivity.Value1 = flocaldsk;
-
+                ProgressBar_Drives_LocalDiskActivity.Value2 = flocalidle;
                 Label_Drives_LocalRead.Text = Converter.ConvertByteSize(flocalread) + "/sec";
                 Label_Drives_LocalWrite.Text = Converter.ConvertByteSize(flocalwrite) + "/sec";
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }                     
+            catch (Exception ex) { Log($"Error updating local disk information: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
         private void UpdateRemovableDiskInfo()
@@ -327,24 +377,31 @@ namespace Omnicrom
             try
             {
                 if (!RemovableDriveFound)
-                    return;
-                else if (RemovableDriveFound == true && GroupBox_Drives_Removable.Visible != true)
-                    ShowRemovableDriveGroupBox();
+                {
+                    if (GroupBox_Drives_Removable.Visible != false)
+                        ShowRemovableDriveGroupBox();
+                }   
+                else
+                {
+                    if (GroupBox_Drives_Removable.Visible != true)
+                        ShowRemovableDriveGroupBox();
 
+                    // Removable Disk (X:)
+                    int fremovedsk = GetDiskUse(DSK_Counter_Removable);
+                    int fremoveidle = GetDiskUse(IDLE_Counter_Removable);
+                    long fremoveread = (long)DSKR_Counter_Removable.NextValue();
+                    long fremovewrite = (long)DSKW_Counter_Removable.NextValue();
 
-                // Removable Disk (X:)
-                int fremovedsk = (int)DSK_Counter_Removable.NextValue();
-                long fremoveread = (long)DSKR_Counter_Removable.NextValue();
-                long fremovewrite = (long)DSKW_Counter_Removable.NextValue();
+                    ProgressBar_Drives_RemovableUsedSpace.Value1 = (int)Removable.UsedSpacePercent;
+                    Label_Drives_RemovableFreeSpace.Text = $"{Removable.FreeSpaceText} free of";
 
-                ProgressBar_Drives_RemovableUsedSpace.Value1 = (int)Removable.UsedSpacePercent;
-                Label_Drives_RemovableFreeSpace.Text = $"{Removable.FreeSpaceText} free of";
-
-                ProgressBar_Drives_RemovableDiskActivity.Value1 = fremovedsk;
-                Label_Drives_RemovableRead.Text = Converter.ConvertByteSize(fremoveread) + "/sec";
-                Label_Drives_RemovableWrite.Text = Converter.ConvertByteSize(fremovewrite) + "/sec";        
+                    ProgressBar_Drives_RemovableDiskActivity.Value1 = fremovedsk;
+                    ProgressBar_Drives_RemovableDiskActivity.Value2 = fremoveidle;
+                    Label_Drives_RemovableRead.Text = Converter.ConvertByteSize(fremoveread) + "/sec";
+                    Label_Drives_RemovableWrite.Text = Converter.ConvertByteSize(fremovewrite) + "/sec";
+                }            
             }
-            catch (Exception e) { Log(string.Format("Exception {0} Trace {1}", e.Message, e.StackTrace)); }
+            catch (Exception ex) { Log($"Error updating removable disk information: Exception {ex.Message} Trace {ex.StackTrace}"); }
         }
 
 
@@ -356,13 +413,17 @@ namespace Omnicrom
         // Click Events
         private void Button_Logs_ScrollToTop_Click(object sender, EventArgs e)
         {
-            CurrentLogBox.SelectionStart = 1;
-            CurrentLogBox.ScrollToCaret();
+            try
+            {
+                CurrentLogBox.SelectionStart = 1;
+                CurrentLogBox.ScrollToCaret();
+            }
+            catch (Exception ex) { Log($"Exception {ex.Message} Trace {ex.StackTrace}"); }    
         }
 
         private void Button_Logs_ExternalOpen_Click(object sender, EventArgs e)
         {
-
+           Task.Run(() => OpenExternalLog(CurrentLogBox));
         }
 
         private void Button_Logs_Clear_Click(object sender, EventArgs e)
@@ -372,7 +433,7 @@ namespace Omnicrom
 
         private void Button_Logs_Find_Click(object sender, EventArgs e)
         {
-            Find(TextBox_Logs_FindBoxInput.Text, false, CurrentLogBox);
+            Find(TextBox_Logs_FindBoxInput.Text);
         }
   
 
@@ -491,13 +552,13 @@ namespace Omnicrom
 
         private void Label_Machine_Name_MouseMove(object sender, MouseEventArgs e)
         {
-            Label_Machine_Name.ForeColor = Color.AliceBlue;
+            Label_Machine_Name.ForeColor = BlueTextColor;
             Label_ToolTip_DisplayText.Text = "Machine display name. NOTE: Clicking this text will copy contents to the clipboard.";
         }
 
         private void Label_Machine_Tag_MouseMove(object sender, MouseEventArgs e)
         {
-            Label_Machine_Tag.ForeColor = Color.AliceBlue;
+            Label_Machine_Tag.ForeColor = BlueTextColor;
             Label_ToolTip_DisplayText.Text = "Manufacturer issued Service Tag tied to this machine as parsed from Bios. NOTE: Clicking this text will copy contents to the clipboard.";
         }
 
@@ -544,6 +605,17 @@ namespace Omnicrom
         private void Button_Machine_TaskManager_MouseMove(object sender, MouseEventArgs e)
         {
             Label_ToolTip_DisplayText.Text = "Launch Windows Task Manager.";
+        }
+
+        // Copy to clipboard events
+        private void Label_Machine_Name_MouseClick(object sender, MouseEventArgs e)
+        {
+            CopyTextFromLabel(Label_Machine_Name);
+        }
+
+        private void Label_Machine_Tag_MouseClick(object sender, MouseEventArgs e)
+        {
+            CopyTextFromLabel(Label_Machine_Tag);
         }
 
 
@@ -654,11 +726,34 @@ namespace Omnicrom
         #region Status Control Events
 
         public void Reset_ToolTip_MouseLeave(object sender, EventArgs e)
-        {
-            RadButton but = sender as RadButton;
+        {                  
             Label_ToolTip_DisplayText.Text = "";
-     
-            //but.ButtonElement.ResetLayout
+
+            if (sender is RadButton)
+            {
+                RadButton but = sender as RadButton;
+
+                if (but.ForeColor == BlueTextColor)
+                    but.ForeColor = GrayButtonTextColor;
+            }
+            else if (sender is RadLabel)
+            {
+                RadLabel lab = sender as RadLabel;
+
+                if (lab.ForeColor == BlueTextColor)
+                    lab.ForeColor = WhiteTextColor;
+            }
+        }
+
+        public void Button_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (sender is RadButton)
+            {
+                RadButton but = sender as RadButton;
+
+                if (but.ForeColor != BlueTextColor)
+                    but.ForeColor = BlueTextColor;
+            }
         }
 
         // Mouse Over Events
@@ -686,18 +781,6 @@ namespace Omnicrom
 
 
         #endregion Status Control Events
-
-        // Copy to clipboard events
-        private void Label_Machine_Name_MouseClick(object sender, MouseEventArgs e)
-        {
-            CopyTextFromLabel(Label_Machine_Name);
-        }
-
-        private void Label_Machine_Tag_MouseClick(object sender, MouseEventArgs e)
-        {
-            CopyTextFromLabel(Label_Machine_Tag);
-        }
-
 
         #region Settings toggle switch events
 
@@ -765,6 +848,135 @@ namespace Omnicrom
 
         }
 
+        private async void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DisposePerformanceCounters();
+            await StopProcessAtCloseAsync();
+        }
+
+        private void GroupBox_Drives_Removable_VisibleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region QuickTool Events
+
+
+        // Mouse Over Events
+        private void GroupBox_QuickTools_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Quick access for various tools, fixes, and directories.";
+        }
+
+        private void Button_QuickTools_OpenCMD_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Open an instance of CMD prompt.";
+        }
+
+        private void Button_QuickTools_DiskRepair_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Run Check Disk and DISM.";
+        }
+
+        private void Button_QuickTools_CleanDisk_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Run disk cleanup.";
+        }
+
+        private void Button_QuickTools_OpenUserFolder_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Opens user directory.";
+        }
+
+        private void Button_QuickTools_OpenPowerShell_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Open an instance of PowerShell.";
+        }
+
+        private void Button_QuickTools_UnlockDrive_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Unlock any BitLocked drives.";
+        }
+
+        // Click Events
+        private void Button_QuickTools_OpenCMD_Click(object sender, EventArgs e)
+        {
+            StartCMDSessionAsync();
+        }
+
+        private void Button_QuickTools_OpenPowerShell_Click(object sender, EventArgs e)
+        {
+            StartPSSessionAsync();
+        }
+
+        private void Button_QuickTools_DiskRepair_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private async void Button_QuickTools_CleanDisk_Click(object sender, EventArgs e)
+        {
+            try { await Task.Run(() => { _ = ProcessManager.RunScript(CleanMgr); }); }
+            catch (Exception ex) { Log($"Error running clean manager: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_QuickTools_OpenUserFolder_Click(object sender, EventArgs e)
+        {
+            try { await Task.Run(() => Process.Start(UserProfile)); }
+            catch (Exception ex) { Log($"Error opening user directory: Exception {ex.Message} Trace {ex.StackTrace}"); }           
+        }
+
+        private async void Button_QuickTools_UnlockDrive_Click(object sender, EventArgs e)
+        {
+            //try { _ = ProcessManager.RunScript(apppath_UnlockDrive); }
+            //catch (Exception ex) { Log($"Error opening Unlock: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
+            //try 
+            //{ 
+            //    await Task.Run(() => 
+            //    {
+            //        var startInfo = new ProcessStartInfo()
+            //        {
+            //            FileName = "powershell.exe",
+            //            Arguments = $"-NoProfile -ExecutionPolicy ByPass -File \"{apppath_UnlockDrive}\"",
+            //            Verb = "RunAs",
+            //            UseShellExecute = false,
+            //            CreateNoWindow = true,                  
+            //        };
+            //        Process.Start(startInfo);
+            //    }); 
+            //}
+            //catch (Exception ex) { Log($"Error opening Unlock: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
+
+            //string app = "cmd.exe";
+            //string com = @"start \\mig\c$\mig\Ant\Resources\Scripts\ModdedScripts\PowerShell\UnlockDrives.ps1";
+
+            //try { await Task.Run(async () => { await RunCommandPrompt($"{app} {com}"); }); }
+            //catch (Exception ex) { Log($"Error running GPUpate: Exception {ex.Message} Trace {ex.StackTrace}"); }
+
+         
+            try { RunBitunlocker(); }
+            catch (Exception ex) { Log($"Error running GPUpdate: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void Button_QuickTools_GPUpdate_Click(object sender, EventArgs e)
+        {
+           
+            try { RunGpUpdate(); }
+            catch (Exception ex) { Log($"Error running GPUpdate: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void Button_QuickTools_Shortcut_Click(object sender, EventArgs e)
+        {
+            try { CopyOmnicromToDesktop(); }
+            catch (Exception ex) { Log($"Error creating shortcut: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
 
         // Machine shortcut click events
         private void Button_Machine_LogOut_Click(object sender, EventArgs e)
@@ -800,15 +1012,471 @@ namespace Omnicrom
             await Task.Run(() => Process.Start("taskmgr.exe"));
         }
 
-        private void GroupBox_Drives_Removable_VisibleChanged(object sender, EventArgs e)
+        // Old OMT Events
+        private void Button_Old_OMT_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Launch the original OMT v3.8 tool.";
+        }
+
+        private void Button_Old_USMT_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Launch the original migration (USMT) GUI.";
+        }
+
+        private void Button_Old_AppInstaller_MouseMove(object sender, MouseEventArgs e)
+        {
+            Label_ToolTip_DisplayText.Text = "Launch the original App Installer GUI.";
+        }
+
+        private async void Button_Old_OMT_Click(object sender, EventArgs e)
+        {
+            try { await Task.Run(() => Process.Start(apppath_OMT)); }
+            catch (Exception ex) { Log($"Error opening OMT v3.8: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Old_USMT_Click(object sender, EventArgs e)
+        {
+            try { await Task.Run(() => Process.Start(apppath_USMT)); }
+            catch (Exception ex) { Log($"Error opening USMT: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Old_AppInstaller_Click(object sender, EventArgs e)
+        {
+            try { await Task.Run(() => Process.Start(apppath_AppInstaller)); }
+            catch (Exception ex) { Log($"Error opening App Installer: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+
+        #endregion QuickTool Events
+
+        #region Link Events
+
+
+        // Link Click Events
+        private async void Button_Links_DellCommand_Click(object sender, EventArgs e)
+        {
+            Log("Launching Dell Command webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(DellCommand)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_TransferOwnership_Click(object sender, EventArgs e)
+        {
+            Log("Launching Transfer of Ownership webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(TransferOwner)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_ServiceNow_Click(object sender, EventArgs e)
+        {
+            Log("Launching Service Now webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(ServiceNow)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_DellDrivers_Click(object sender, EventArgs e)
+        {
+            Log("Launching Dell Drivers webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(DellDrivers)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_HPDrivers_Click(object sender, EventArgs e)
+        {
+            Log("Launching HP Drivers webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(HPDrivers)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_DellWarranty_Click(object sender, EventArgs e)
+        {
+            Log("Launching Dell Warranty webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(DellWarrantyCheck)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_HPWarranty_Click(object sender, EventArgs e)
+        {
+            Log("Launching HP Warranty webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(HPWarrantyCheck)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_AppleWarranty_Click(object sender, EventArgs e)
+        {
+            Log("Launching Apple Warranty webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(AppleWarrantyCheck)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_ServiceManagment_Click(object sender, EventArgs e)
+        {
+            Log("Launching Service Managment webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(ServiceManagment)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_WSP_Click(object sender, EventArgs e)
+        {
+            Log("Launching WSP webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(WSP)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_ModernHardware_Click(object sender, EventArgs e)
+        {
+            Log("Launching Modern Hardware webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(ModernHardware)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_PCLookup_Click(object sender, EventArgs e)
+        {
+            Log("Launching PC Lookup webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(PCLookup)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_ActiveDirectory_Click(object sender, EventArgs e)
+        {
+            Log("Launching Active Directory webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(ActiveDirectory)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private async void Button_Links_Jamf_Click(object sender, EventArgs e)
+        {
+            Log("Launching Jamf webpage ...");
+            try { await Task.Run(() => System.Diagnostics.Process.Start(JamfSupport)); }
+            catch (Exception ex) { Log($"Error opening browser: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+
+
+        #endregion Link Events
+
+        #region USMT Events
+
+
+
+        private async void CheckGPUpdate()
+        { 
+            if (USMT_GPUpdateON)
+            {
+                try
+                {
+                    Task t = Task.Run(() => RunGpUpdate().Wait());
+                    await t;
+
+                    Log("Finished GP Update ...");
+                }
+                catch (Exception ex) { Log($"Error opening USMT All: Exception {ex.Message} Trace {ex.StackTrace}"); }      
+            }
+            else
+                return;                   
+        }
+
+        // USMT Button Events
+        private async void Button_USMT_AutoStart_Click(object sender, EventArgs e)
+        {
+            string path = @"\\ECNASNA05CIFS\onsite\Migrations\mig\usmt_scripts\USMT_full.ps1";
+
+            CheckGPUpdate();
+          
+            try
+            {
+                await Task.Run(() =>
+                {
+                    var startInfo = new ProcessStartInfo()
+                    {
+                        FileName = "powershell.exe",
+                        Arguments = $"-NoProfile -ExecutionPolicy ByPass -File \"{path}\"",
+                        Verb = "RunAs",
+                        UseShellExecute = false,                    
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true,
+                    };
+                    Process pro = new Process();
+                    pro.EnableRaisingEvents = true;
+                    pro.OutputDataReceived += new DataReceivedEventHandler(CMD_OutputDataReceived);
+                    pro.ErrorDataReceived += new DataReceivedEventHandler(CMD_ErrorDataReceived);
+                    pro.StartInfo = startInfo;
+                    pro.Start();
+                });
+            }
+            catch (Exception ex) { Log($"Error opening Unlock: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private static void CMD_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (!(sender is Process) || string.IsNullOrEmpty(e.Data))
+                return;
+
+            try
+            {
+                string data = e.Data;
+                data.Trim();
+                MigLog(data);
+            }
+            catch (Exception ex) { Log("Error while displaying output data: \n\n" + ex.Message); }
+        }
+
+        private static void CMD_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            if (!(sender is Process) || string.IsNullOrEmpty(e.Data))
+                return;
+
+            try
+            {
+                string data = e.Data;
+                data.Trim();
+                MigLog(data);
+            }
+            catch (Exception ex) { Log("Error while displaying error data: \n\n" + ex.Message); }
+        }
+
+        private async void Button_USMT_Scan_Click(object sender, EventArgs e)
+        {
+            string path = @"\\ECNASNA05CIFS\onsite\Migrations\mig\usmt.ps1";
+            CheckGPUpdate();
+
+            try
+            {
+                await Task.Run(() =>
+                {
+                    var startInfo = new ProcessStartInfo()
+                    {
+                        FileName = "powershell.exe",
+                        Arguments = $"-NoProfile -ExecutionPolicy ByPass -File \"{path}\"",
+                        Verb = "RunAs",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true,
+                    };
+                    Process pro = new Process();
+                    pro.EnableRaisingEvents = true;
+                    pro.OutputDataReceived += new DataReceivedEventHandler(CMD_OutputDataReceived);
+                    pro.ErrorDataReceived += new DataReceivedEventHandler(CMD_ErrorDataReceived);
+                    pro.StartInfo = startInfo;
+                    pro.Start();
+                });
+            }
+            catch (Exception ex) { Log($"Error opening Unlock: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void Button_USMT_Load_Click(object sender, EventArgs e)
+        {
+            try { MigMachine("offlineload"); }
+            catch (Exception ex) { Log($"Error opening USMT load: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void Button_USMT_Up_Click(object sender, EventArgs e)
+        {
+            try { MigMachine("usmtup"); }
+            catch (Exception ex) { Log($"Error opening USMT up: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void Button_USMT_Down_Click(object sender, EventArgs e)
+        {
+            try { MigMachine("usmtdown"); }
+            catch (Exception ex) { Log($"Error opening USMT down: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        // USMT Option Toggle Switch Events
+        private void ToggleSwitch_USMT_GPUpdate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ToggleSwitch_USMT_GPUpdate.Value == true)
+                    USMT_GPUpdateON = true;
+                else
+                    USMT_GPUpdateON = false;
+            }
+            catch (Exception ex) { Log($"Error toggling switch value: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void ToggleSwitch_USMT_PostCleanup_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ToggleSwitch_USMT_GPUpdate.Value == true)
+                    USMT_PostCleanUpON = true;
+                else
+                    USMT_PostCleanUpON = false;
+            }
+            catch (Exception ex) { Log($"Error toggling switch value: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void ToggleSwitch_USMT_FinishedSound_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ToggleSwitch_USMT_GPUpdate.Value == true)
+                    USMT_FinishedSoundON = true;
+                else
+                    USMT_FinishedSoundON = false;
+            }
+            catch (Exception ex) { Log($"Error toggling switch value: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void ToggleSwitch_USMT_PostCompare_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ToggleSwitch_USMT_GPUpdate.Value == true)
+                    USMT_PostCompareON = true;
+                else
+                    USMT_PostCompareON = false;
+            }
+            catch (Exception ex) { Log($"Error toggling switch value: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+
+        #endregion USMT Events
+
+        #region Menu Events
+
+
+
+
+
+        #endregion Menu Events
+
+        #region Tool Strip Menu Events
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { UpdateForm(this); }
+            catch (Exception ex) { Log($"Error refreshing form: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Application.Exit(); }
+            catch (Exception ex) { Log($"Error exiting application: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void restartOmnicromStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try { Application.Restart(); }
+            catch (Exception ex) { Log($"Error exiting application: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                AboutBoxForm aboutbox = new AboutBoxForm();        
+                aboutbox.StartPosition = FormStartPosition.CenterParent;
+                aboutbox.TopMost = true;
+                aboutbox.Show();
+                aboutbox.BringToFront();
+                aboutbox.Focus();
+                aboutbox.TopMost = false;
+            }
+            catch (Exception ex) { Log($"Error loading about box: Exception {ex.Message} Trace {ex.StackTrace}"); }
+        }
+
+        private void radPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private async void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        #endregion Tool Strip Menu Events
+
+        private void RichTextBox_Logs_USMT_TextChanged(object sender, EventArgs e)
         {
-            DisposePerformanceCounters();
-            await StopProcessAtCloseAsync();
+
         }
+    }
+
+
+    /// <summary>
+    /// Collection of shared utility functions
+    /// </summary>
+    public static class Utility
+    {
+        /// <summary>
+        /// Check if process current process is run as Administrator.
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsRunAsAdmin()
+        {
+            try
+            {
+                using (WindowsIdentity identify = WindowsIdentity.GetCurrent())
+                {
+                    WindowsPrincipal principal = new WindowsPrincipal(identify);
+                    return principal.IsInRole(WindowsBuiltInRole.Administrator);
+                }
+            }
+            catch { return false; }
+        }
+
+        /// <summary>
+        /// Restart application in adminstrator mode
+        /// </summary>
+        /// <param name="arguments">Command line argument for restart instance. Leave blank to use current startup arguments</param>
+        public static void RestartApplicationAsAdmin(string arguments = null)
+        {
+            ProcessExecutor executor = new ProcessExecutor();
+            executor.RunAsAdministrator = true;
+            executor.Application = Environment.GetCommandLineArgs()[0];
+            if (string.IsNullOrEmpty(arguments))
+            {
+                executor.Arguments = string.Join(" ", Environment.GetCommandLineArgs().Skip(1));
+            }
+            else executor.Arguments = arguments;
+            executor.ShowConsoleWindow = true;
+            executor.Execute(false);
+            Environment.Exit(0);
+        }
+
+        private static bool isChecked = false;
+
+        public static bool NullifyUAC()
+        {
+            try
+            {
+                RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", true);
+                key.SetValue("EnableLUA", "0", RegistryValueKind.DWord);
+                key.Close();
+
+                if (!isChecked)
+                    Log($"UAC modificaion success."); isChecked = true;
+
+                return true;
+            }
+            catch 
+            {
+                if (!isChecked)
+                    Log($"Error: UAC modificaion has failed."); isChecked = true;
+
+                return false; 
+            }
+        }
+
+        public static bool isUACEnabled()
+        {
+            bool result = false;
+
+            try
+            {
+                RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", true);
+                var val = key.GetValue("EnableLUA").ToString();
+
+                if (val == "0")
+                    result = true;
+                else
+                    result = false;
+
+                key.Close();
+                return result;
+            }
+            catch { return false; }
+        }
+
     }
 }

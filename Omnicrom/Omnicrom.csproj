@@ -71,15 +71,29 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\..\ref\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\..\ref\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="SearchableRichTextBox">
+      <HintPath>..\..\ref\SearchableRichTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Oboslete\NetFrameWork\NetFrameWork\bin\Debug\System.Management.Automation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -105,15 +119,11 @@
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.CrystalDark.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls.Themes.FluentDark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.FluentDark.dll</HintPath>
-	  <Private>True</Private>
-	</Reference>
-	<Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+    <Reference Include="Telerik.WinControls.Themes.Office2013Dark, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.Office2013Dark.dll</HintPath>
-	  <Private>True</Private>
-	</Reference>
-	<Reference Include="Telerik.WinControls.Themes.Office2019, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Office2019, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.1.118.40\Telerik.WinControls.Themes.Office2019.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -136,6 +146,9 @@
     <Reference Include="TelerikCommon, Version=2022.1.118.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWF\2022.1.118.40\TelerikCommon.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Usb.Events">
+      <HintPath>..\..\ref\Usb.Events.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -178,10 +191,9 @@
     </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="LogManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="LogMonitor.cs" />
     <Compile Include="Models.cs" />
+    <Compile Include="ProcessManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\SplashScreenForm.resx">
@@ -350,6 +362,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GlobalTechIcon.ico" />
+    <None Include="Resources\update_contact_info.png" />
+    <None Include="Resources\shortcuts.png" />
+    <None Include="Resources\monitor, utility, system icon icon1.png" />
+    <None Include="Resources\database_cleanup.png" />
+    <None Include="Resources\database_access.png" />
+    <None Include="Resources\folder_go1.png" />
+    <None Include="Resources\radar, detect icon icon.png" />
+    <None Include="Resources\folder_find.png" />
+    <None Include="Resources\Actions system run icon icon.png" />
+    <None Include="Resources\Apps system software update icon icon %281%29.png" />
+    <None Include="Resources\Flag_Green.png" />
+    <None Include="Resources\forklift.png" />
+    <None Include="Resources\preferences-desktop.png" />
+    <None Include="Resources\preferences-web-browser-shortcuts - Copy.png" />
+    <None Include="Resources\speedometer.png" />
+    <None Include="Resources\roadworks.png" />
+    <None Include="Resources\world.png" />
+    <None Include="Resources\Apps preferences web browser cache icon icon %281%29.png" />
+    <None Include="Resources\Junior Icon 122.png" />
+    <None Include="Resources\kindpng_2983424.png" />
+    <None Include="Resources\Drag-dragon_2.png" />
+    <None Include="Resources\pngwing.com %286%29.png" />
+    <None Include="Resources\Office365_100x70.png" />
+    <None Include="Resources\folder_go %282%29.png" />
+    <None Include="Resources\folder_go.png" />
+    <None Include="Resources\greenflag_32.png" />
+    <None Include="Resources\ControlPanel_32.png" />
+    <None Include="Resources\ping_256.png" />
+    <None Include="Resources\control_panel.png" />
     <None Include="Resources\CheckMark_small_50.png" />
     <None Include="Resources\Bullet, Valid icon icon.png" />
     <None Include="Resources\pngegg %287%291.png" />
@@ -392,11 +433,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="log4net">
-      <Version>2.0.14</Version>
+    <PackageReference Include="CliWrap">
+      <Version>3.4.2</Version>
     </PackageReference>
     <PackageReference Include="NLog.Extensions.Logging">
       <Version>1.7.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Diagnostics.PerformanceCounter">
+      <Version>6.0.0</Version>
     </PackageReference>
     <PackageReference Include="System.Management">
       <Version>6.0.0</Version>
